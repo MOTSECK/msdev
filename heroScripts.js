@@ -1,5 +1,4 @@
 const hero = document.getElementById("hero");
-const header = document.querySelector("header");
 let lastPointTime = 0;
 const interval = 35; // un peu plus rapide pour plus de fluidité
 const colors = [
