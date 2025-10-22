@@ -1,0 +1,103 @@
+/* ========== 🌑 MODE SOMBRE ========== */
+
+/* Couleurs globales inversées */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Liens */
+a {
+  color: #fff;
+}
+a:hover {
+  color: #000;
+}
+
+/* HERO */
+.hero {
+  background: #000;
+  color: #fff;
+}
+.hero-btn a {
+  background-color: #fff;
+  color: #000;
+  border-color: #ffffff36;
+}
+.hero-btn a::before {
+  background-color: #000;
+}
+.hero-btn a:hover {
+  color: #fff;
+}
+
+/* Logo carré point */
+.hero-logo .dot {
+  background: #fff;
+}
+
+/* HEADER */
+header {
+  background: #000000e6;
+}
+.nav-center,
+.nav-center-floating {
+  background: #0e0e0e;
+}
+.nav-links a {
+  color: #fff;
+}
+.nav-links a:hover {
+  color: #ffffffb0;
+}
+.nav-highlight {
+  background: #111;
+}
+
+/* Bouton principal (nav) */
+.nav-btn .btn {
+  background-color: #fff;
+  color: #000;
+  border-color: #ffffff36;
+}
+.nav-btn .btn::before {
+  background-color: #000;
+}
+.nav-btn .btn:hover {
+  color: #fff;
+}
+
+/* Burger menu */
+.burger div {
+  background: #fff;
+}
+
+/* Menu mobile */
+.mobile-menu.active {
+  background: #fff;
+}
+.nav-links a {
+  color: #000000ff;
+  border-color: #000;
+}
+.nav-links a:hover {
+  color: #ffffffff;
+}
+.nav-center{
+    background: #ffffffff;
+}
+.nav-center-floating.active {
+  background: #ffffffff;
+}
+.logo-link:hover .logo-text {
+  color: #ffffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.41), 0 0 20px rgba(255, 255, 255, 0.38);
+}
+/* Scrollbar sombre */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff6e;
+  border: 3px solid #000000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+}
