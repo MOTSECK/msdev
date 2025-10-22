@@ -55,40 +55,40 @@ if (toggle) {
   });
 }
 //annimation logo hero
-      const logoParts = ["M", "S", "D", "E", "V"];
-      const logo = document.getElementById("hero-logo");
+const logoParts = ["M", "S", "D", "E", "V"];
+const logo = document.getElementById("hero-logo");
 
-      let currentIndex = 0;
+let currentIndex = 0;
 
-      function nextStep() {
-        if (currentIndex >= logoParts.length) {
-          // révéler sous-titre et bouton si nécessaire
-          const subtitle = document.querySelector(".hero-subtitle");
-          const btn = document.querySelector(".hero-btn");
-          if (subtitle) subtitle.classList.add("appear");
-          if (btn) btn.classList.add("appear");
-          return;
-        }
+function nextStep() {
+  if (currentIndex >= logoParts.length) {
+    // révéler sous-titre et bouton si nécessaire
+    const subtitle = document.querySelector(".hero-subtitle");
+    const btn = document.querySelector(".hero-btn");
+    if (subtitle) subtitle.classList.add("appear");
+    if (btn) btn.classList.add("appear");
+    return;
+  }
 
-        // Ajouter la lettre avant le point final
-        const span = document.createElement("span");
-        span.textContent = logoParts[currentIndex];
-        span.style.opacity = 0;
-        span.style.display = "inline-block";
-        span.style.transition = "all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
-        logo.insertBefore(span, logo.lastChild);
+  // Ajouter la lettre avant le point final
+  const span = document.createElement("span");
+  span.textContent = logoParts[currentIndex];
+  span.style.opacity = 0;
+  span.style.display = "inline-block";
+  span.style.transition = "all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
+  logo.insertBefore(span, logo.lastChild);
 
-        // Animer la lettre avec bounce
-        setTimeout(() => {
-          span.style.opacity = 1;
-          span.style.transform = "translateY(-8px) scale(1.1)"; // monte un peu
-          setTimeout(() => {
-            span.style.transform = "translateY(0) scale(1)"; // retombe doucement
-          }, 200);
-        }, 50);
+  // Animer la lettre avec bounce
+  setTimeout(() => {
+    span.style.opacity = 1;
+    span.style.transform = "translateY(-8px) scale(1.1)"; // monte un peu
+    setTimeout(() => {
+      span.style.transform = "translateY(0) scale(1)"; // retombe doucement
+    }, 200);
+  }, 50);
 
-        currentIndex++;
-        setTimeout(nextStep, 200);
-      }
+  currentIndex++;
+  setTimeout(nextStep, 200);
+}
 
-      document.addEventListener("DOMContentLoaded", nextStep);
+document.addEventListener("DOMContentLoaded", nextStep);
