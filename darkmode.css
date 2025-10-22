@@ -67,11 +67,6 @@ header {
   color: #fff;
 }
 
-/* Burger menu */
-.burger div {
-  background: #fff;
-}
-
 /* Menu mobile */
 .mobile-menu.active {
   background: #fff;
@@ -92,6 +87,15 @@ header {
 .logo-link:hover .logo-text {
   color: #ffffffff;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.41), 0 0 20px rgba(255, 255, 255, 0.38);
+}
+/* Burger menu styles for dark mode*/
+.burger {
+  background: #000000ff;
+      border: 2px solid #ffffff;
+}
+
+.burger div {
+  background: #ffffffff;
 }
 /* Scrollbar sombre */
 ::-webkit-scrollbar-thumb {

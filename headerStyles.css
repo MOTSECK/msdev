@@ -7,34 +7,27 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
 
 /* La barre de scroll entière */
 ::-webkit-scrollbar {
-  width: 12px;
-  /* largeur verticale */
-  height: 12px;
-  /* hauteur horizontale */
+  width: 12px;           /* largeur verticale */
+  height: 12px;          /* hauteur horizontale */
 }
 
 /* Le “track” : zone derrière la barre */
 ::-webkit-scrollbar-track {
-  background: #f0f0f000;
-  /* couleur de fond */
+  background: #f0f0f000;  /* couleur de fond */
   border-radius: 10px;
 }
 
 /* La barre (thumb) : partie qu’on déplace */
 ::-webkit-scrollbar-thumb {
-  background-color: #00000018;
-  /* couleur de la barre */
-  border-radius: 10px;
-  /* arrondir les coins */
-  border: 3px solid #ffffff;
-  /* créer un “padding” autour */
+  background-color: #00000018;  /* couleur de la barre */
+  border-radius: 10px;        /* arrondir les coins */
+  border: 3px solid #ffffff; /* créer un “padding” autour */
 }
 
 /* Au survol */
@@ -49,12 +42,10 @@ body {
   font-size: 1.125rem;
   line-height: 1.6;
 }
-
 /* Empêche le scroll du body quand le menu est ouvert */
 body.no-scroll {
   overflow: hidden;
-  height: 100vh;
-  /* empêche tout défilement sur mobile */
+  height: 100vh; /* empêche tout défilement sur mobile */
 }
 
 /* ===============================
@@ -124,7 +115,7 @@ header {
   transform: translateY(-100%);
   opacity: 0;
   padding: 1.6rem 3rem 0rem 3em;
-  position: sticky;
+  position: sticky ;
   opacity: 1;
   top: 0;
   left: 0;
@@ -151,8 +142,7 @@ header.hide {
 
 /* --- Logo --- */
 /* Empêche la sélection du texte et configure le curseur */
-.no-select,
-.no-select * {
+.no-select, .no-select * {
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -162,8 +152,7 @@ header.hide {
 
 /* Style du lien du logo */
 .logo-link {
-  text-decoration: none;
-  /* Supprime le soulignement */
+  text-decoration: none; /* Supprime le soulignement */
 }
 
 /* Style du texte du logo */
@@ -171,30 +160,27 @@ header.hide {
   font-size: 2rem;
   font-weight: bold;
   display: inline-block;
-  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
-    color 0.3s,
-    text-shadow 0.3s;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), 
+              color 0.3s, 
+              text-shadow 0.3s;
 }
 
 /* Hover : effet "pop & glow" innovant */
 .logo-link:hover .logo-text {
   transform: scale(1.2) rotate(-5deg);
-  color: #1a1a1a;
-  /* Légère nuance pour le survol */
-  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+  color: #1a1a1a; /* Légère nuance pour le survol */
+  text-shadow: 0 0 10px rgba(0,0,0,0.2), 0 0 20px rgba(0,0,0,0.1);
 }
 
 /* Active : effet "press down" */
 .logo-link:active .logo-text {
-  transform: scale(0.95) rotate(0deg);
-  color: #000;
-  /* Couleur reste noire */
+  transform: scale(0.55) rotate(0deg);
+  color: #000; /* Couleur reste noire */
   text-shadow: none;
 }
-
 .logo-text:focus {
   outline: none;
-}
+} 
 
 /* --- Bloc central (liens) --- */
 .nav-center {
@@ -211,33 +197,31 @@ header.hide {
 
 /* ======== NAV-CENTER FLOTTANT ======== */
 @media (min-width: 1098px) {
-  .nav-center-floating {
-    backdrop-filter: blur(81px) !important;
-    position: fixed;
-    top: 2.3rem;
-    left: 46.1%;
-    transform: translateX(-46.1%) translateY(-520px);
-    opacity: 0;
-    pointer-events: none;
-    z-index: 20;
-    /* ✅ plus haut que le header */
-    background: #000000ff;
-    border-radius: 14px;
-    padding: 0.35rem 0.8rem;
-    margin-left: 1.4em;
-    display: flex;
-    align-items: center;
-    transition: all 3s ease;
-  }
-
-  .nav-center-floating.active {
-    opacity: 1;
-    z-index: 2000;
-    transform: translateX(-46.1%) translateY(0);
-    pointer-events: all;
-  }
+.nav-center-floating {
+  backdrop-filter: blur(81px)!important;
+  position: fixed;
+  top: 2.3rem;
+  left: 46.1%;
+  transform: translateX(-46.1%) translateY(-520px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20; /* ✅ plus haut que le header */
+  background: #000000ff;
+  border-radius: 14px;
+  padding: 0.35rem 0.8rem;
+  margin-left: 1.4em;
+  display: flex;
+  align-items: center;
+  transition: all 3s ease;
 }
 
+.nav-center-floating.active {
+  opacity: 1;
+  z-index: 2000; 
+  transform: translateX(-46.1%) translateY(0);
+  pointer-events: all;
+}
+}
 /* --- Liste des liens --- */
 .nav-links {
   list-style: none;
@@ -342,14 +326,16 @@ header.hide {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
+  background: #ffffffff;
   padding: 15px;
   border-radius: 25px;
+  border: 2px solid #000000ff;
 }
 
 .burger div {
   width: 25px;
   height: 3px;
-  background: #000000;
+  background: #000000ff;
   transition: all 0.4s ease;
 }
 
@@ -365,7 +351,7 @@ header.hide {
 @media (max-width: 1098px) {
   header {
     padding: 1rem 1.2rem;
-    border-radius: 0 0 14px 14px;
+    border-radius: 0 0 14px 14px; 
     position: fixed;
     top: 0;
     width: 100%;
@@ -377,10 +363,6 @@ header.hide {
   .navbar {
     padding-top: 15px;
     justify-content: space-between;
-  }
-
-  .nav-center-floating {
-    display: none;
   }
 
   .nav-center {
@@ -399,11 +381,9 @@ header.hide {
     border-right: 1px solid #ffffff;
     border-left: 1px solid #ffffff;
   }
-
   .nav-links a:hover {
-    color: #ffffff;
+   color: #ffffff;
   }
-
   .burger {
     display: flex;
   }
@@ -415,7 +395,7 @@ header.hide {
     display: none;
     padding: 1.7rem 1rem;
     text-align: center;
-
+    
   }
 
   .mobile-menu.active {
@@ -432,7 +412,6 @@ header.hide {
       opacity: 0;
       transform: translateY(-10px);
     }
-
     to {
       opacity: 1;
       transform: translateY(0);
@@ -442,11 +421,9 @@ header.hide {
   .burger.toggle div:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-
   .burger.toggle div:nth-child(2) {
     opacity: 0;
   }
-
   .burger.toggle div:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
