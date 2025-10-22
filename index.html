@@ -4,57 +4,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MSDEV</title>
+  <title>MSDEV - Agence Web Créative et Moderne</title>
   <meta name="description"
-    content="WbAgency est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
- <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-<link rel="manifest" href="images/site.webmanifest">
+    content="MSDEV est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
+  <meta name="keywords" content="Agence web, développement web, site moderne, accessibilité web, MSDEV, design créatif" />
+  <meta name="author" content="MSDEV" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+
   <link rel="stylesheet" href="headerStyles.css">
   <link rel="stylesheet" href="heroStyles.css" />
   <link rel="stylesheet" href="darkmode.css" id="darkmode-style" disabled>
 
-
 </head>
 
 <body id="acceuil">
-  <header class="header" id="header-container">
-    <nav class="navbar">
+  <header class="header" id="header-container" role="banner">
+    <nav class="navbar" role="navigation" aria-label="Menu principal">
       <div class="nav-logo logo-link no-select">
-          <h1 class="logo-text" onclick="location.href='#acceuil'">MSDEV.</h1>
+        <h1 class="logo-text" onclick="location.href='#acceuil'">MSDEV.</h1>
       </div>
 
       <div class="nav-center">
-        <ul class="nav-links">
-          <li><a href="#acceuil" title="Accueil">Accueil.</a></li>
-          <span class="divider">|</span>
-          <li><a href="#aboutUs" title="À propos">Bio.</a></li>
-          <span class="divider">|</span>
-          <li><a href="#realisations" title="Réalisations">Mission.</a></li>
-          <span class="divider">|</span>
-          <li><a href="#services" title="Services">Services.</a></li>
-          <span class="divider">|</span>
-          <li><a href="#contact" title="Contact">Contact.</a></li>
+        <ul class="nav-links" role="menubar">
+          <li role="none"><a role="menuitem" href="#acceuil" title="Accueil">Accueil.</a></li>
+          <span class="divider" aria-hidden="true">|</span>
+          <li role="none"><a role="menuitem" href="#aboutUs" title="À propos">Bio.</a></li>
+          <span class="divider" aria-hidden="true">|</span>
+          <li role="none"><a role="menuitem" href="#realisations" title="Réalisations">Mission.</a></li>
+          <span class="divider" aria-hidden="true">|</span>
+          <li role="none"><a role="menuitem" href="#services" title="Services">Services.</a></li>
+          <span class="divider" aria-hidden="true">|</span>
+          <li role="none"><a role="menuitem" href="#contact" title="Contact">Contact.</a></li>
         </ul>
-        <div class="nav-highlight"></div>
+        <div class="nav-highlight" aria-hidden="true"></div>
       </div>
 
       <div class="nav-btn">
         <a href="#contact" class="btn" title="Démarrons votre projet.">Démarrons...</a>
       </div>
 
-
-      <div class="burger" id="burger">
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
         <div></div>
         <div></div>
         <div></div>
-      </div>
+      </button>
 
     </nav>
   </header>
+
   <main>
-    <div role="Bienvenue" class="hero" id="hero">
+    <section role="region" aria-label="Section héros" class="hero" id="hero">
       <h2 class="hero-subtitle">Un partenaire<br>pour tous vos projets.</h2>
       <div class="hero-title">
         <span class="hero-logo" id="hero-logo">.</span>
@@ -62,186 +65,43 @@
       <div class="hero-btn">
         <a href="#contact" title="Démarrons votre projet.">Démarrons votre projet.</a>
       </div>
-    </div>
-    <script>
-      const logoParts = ["M", "S", "D", "E", "V"];
-      const logo = document.getElementById("hero-logo");
-
-      let currentIndex = 0;
-
-      function nextStep() {
-        if (currentIndex >= logoParts.length) {
-          // révéler sous-titre et bouton si nécessaire
-          const subtitle = document.querySelector(".hero-subtitle");
-          const btn = document.querySelector(".hero-btn");
-          if (subtitle) subtitle.classList.add("appear");
-          if (btn) btn.classList.add("appear");
-          return;
-        }
-
-        // Ajouter la lettre avant le point final
-        const span = document.createElement("span");
-        span.textContent = logoParts[currentIndex];
-        span.style.opacity = 0;
-        span.style.display = "inline-block";
-        span.style.transition = "all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55)";
-        logo.insertBefore(span, logo.lastChild);
-
-        // Animer la lettre avec bounce
-        setTimeout(() => {
-          span.style.opacity = 1;
-          span.style.transform = "translateY(-8px) scale(1.1)"; // monte un peu
-          setTimeout(() => {
-            span.style.transform = "translateY(0) scale(1)"; // retombe doucement
-          }, 200);
-        }, 50);
-
-        currentIndex++;
-        setTimeout(nextStep, 200);
-      }
-
-      document.addEventListener("DOMContentLoaded", nextStep);
-    </script>
-
-
-    <section role="Qui somme nous?" id="aboutUs">
-      <h2>Qui somme nous?</h1>
-        <article>
-          <div>
-            <div>
-              <p>MSDEV est une équipe jeune, ambitieuse et créative.</p>
-            </div>
-            <div>
-              <img src="banner1.jpeg">
-            </div>
-
-            <div>&nbsp</div>
-            <div>
-              <p>Nous croyons que chaque idée mérite une présence en ligne moderne, fluide et accessible à
-                tous.</p>
-            </div>
-
-            <div>
-              <p>Notre vision est simple : rendre le numérique accessible à chaque secteur et à chaque
-                entreprise.</p>
-            </div>
-            <div>
-              <img src="banner2.jpeg">
-            </div>
-
-            <div>&nbsp</div>
-            <div>
-              <p>Entre innovation et conception, nous traduisons vos besoins en code <span>&lt;/&gt;</span>.
-              </p>
-            </div>
-
-          </div>
-        </article>
     </section>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br><br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <section role="Nos réalisations" id="realisations">
 
+    <section role="region" aria-labelledby="aboutUs-title" id="aboutUs">
+      <h2 id="aboutUs-title">Qui sommes-nous ?</h2>
+      <article>
+        <div>
+          <p>MSDEV est une équipe jeune, ambitieuse et créative.</p>
+          <img src="banner1.jpeg" alt="Équipe MSDEV en action">
+          <p>Nous croyons que chaque idée mérite une présence en ligne moderne, fluide et accessible à tous.</p>
+          <p>Notre vision est simple : rendre le numérique accessible à chaque secteur et à chaque entreprise.</p>
+          <img src="banner2.jpeg" alt="Illustration de projets numériques MSDEV">
+          <p>Entre innovation et conception, nous traduisons vos besoins en code <span>&lt;/&gt;</span>.</p>
+        </div>
+      </article>
     </section>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br><br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <section role="Nos services" id="services">
 
+    <section role="region" aria-labelledby="realisations-title" id="realisations">
+      <h2 id="realisations-title">Nos réalisations</h2>
+      <!-- Contenu des réalisations -->
     </section>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br><br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <br><br>
-    <section role="Contacter nous" id="contact">
 
+    <section role="region" aria-labelledby="services-title" id="services">
+      <h2 id="services-title">Nos services</h2>
+      <!-- Contenu des services -->
     </section>
-    <footer></footer>
+
+    <section role="region" aria-labelledby="contact-title" id="contact">
+      <h2 id="contact-title">Nous contacter</h2>
+      <!-- Formulaire ou infos de contact -->
+    </section>
+
   </main>
+
+  <footer role="contentinfo">
+    <p>&copy; 2025 MSDEV. Tous droits réservés.</p>
+  </footer>
+
   <script src="headerScripts.js"></script>
   <script src="heroScripts.js"></script>
   <script src="darkmode.js"></script>
