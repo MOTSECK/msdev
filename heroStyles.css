@@ -1,11 +1,12 @@
  /* ===== HERO SECTION NOIR & BLANC ===== */
 .hero {
-  position: relative;
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  width: 100%;
   text-align: center;
   padding: 2rem;
   background: #fff;
@@ -168,7 +169,6 @@
     font-size: 1.1rem;
   }
 }
-
 
 
 
