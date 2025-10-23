@@ -1,68 +1,78 @@
+
+section {
+  will-change: transform, opacity;
+}
+
 /* ===== Section À propos ===== */
 #aboutUs {
-    
-  position: relative;
-  z-index: 2;
-  min-height: 100vh;
-  background-color: #F5F5F5;
-  border-radius: 40px;
-  margin-top: -8vh; /* chevauche légèrement la section précédente */
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+
+    position: relative;
+    z-index: 2;
+    min-height: 100vh;
+    background-color: #F5F5F5;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -8vh;
+    /* chevauche légèrement la section précédente */
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 #aboutUs:hover {
-  transform: translateY(-2vh);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2vh);
+    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
 }
 
 /* ===== Section Réalisations ===== */
 #realisations {
-  position: relative;
-  z-index: 3;
-  min-height: 100vh;
-  background-color: #8D99AE;
-  border-radius: 42px;
-  margin-top: -8vh;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+    position: relative;
+    z-index: 3;
+    min-height: 100vh;
+    background-color: #8D99AE;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -8vh;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 #realisations:hover {
-  transform: translateY(-2vh);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2vh);
+    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
 }
 
 /* ===== Section Services ===== */
 #services {
-  position: relative;
-  z-index: 4;
-  min-height: 100vh;
-  background-color: #FFBE0B;
-  border-radius: 42px;
-  margin-top: -8vh;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+    position: relative;
+    z-index: 4;
+    min-height: 100vh;
+    background-color: #FFBE0B;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -8vh;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 #services:hover {
-  transform: translateY(-2vh);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2vh);
+    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
 }
 
 /* ===== Section Contact ===== */
 #contact {
-  position: relative;
-  z-index: 5;
-  min-height: 100vh;
-  background-color: #3A86FF;
-  border-radius: 42px;
-  margin-top: -8vh;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-  transition: transform 0.6s ease, box-shadow 0.6s ease;
+    position: relative;
+    z-index: 5;
+    min-height: 100vh;
+    background-color: #3A86FF;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: -8vh;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
 #contact:hover {
-  transform: translateY(-2vh);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2vh);
+    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
 }
