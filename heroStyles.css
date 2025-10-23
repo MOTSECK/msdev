@@ -1,4 +1,4 @@
-de meme que ça garde mon style /* ===== HERO SECTION NOIR & BLANC ===== */
+/* ===== HERO SECTION NOIR & BLANC ===== */
 .hero {
   position: relative;
   display: flex;
@@ -169,5 +169,6 @@ de meme que ça garde mon style /* ===== HERO SECTION NOIR & BLANC ===== */
     font-size: 1.1rem;
   }
 }
+
 
 
