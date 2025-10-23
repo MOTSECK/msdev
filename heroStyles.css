@@ -6,7 +6,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 80vh;
   padding: 2rem;
   background: #fff;
   font-family: 'Tomato Grotesk', Arial, sans-serif;
@@ -169,6 +168,7 @@
     font-size: 1.1rem;
   }
 }
+
 
 
 
