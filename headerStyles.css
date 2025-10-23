@@ -8,32 +8,37 @@
   box-sizing: border-box;
 }
 
-html {
+
+html, body {
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
 /* La barre de scroll entière */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 7px;
   /* largeur verticale */
-  height: 12px;
+  height: 10px;
   /* hauteur horizontale */
+  backdrop-filter: blur(825px);
 }
 
 /* Le “track” : zone derrière la barre */
 ::-webkit-scrollbar-track {
-  background: #f0f0f000;
+  background: #969696;
+  backdrop-filter: blur(85px);
+  
   /* couleur de fond */
   border-radius: 10px;
 }
 
 /* La barre (thumb) : partie qu’on déplace */
 ::-webkit-scrollbar-thumb {
-  background-color: #00000018;
+  background-color: #00000078;
   /* couleur de la barre */
   border-radius: 10px;
   /* arrondir les coins */
-  border: 3px solid #ffffff;
+  border: 1px solid #ffffff7d;
   /* créer un “padding” autour */
 }
 
@@ -125,7 +130,6 @@ header {
   opacity: 0;
   padding: 1.6rem 3rem 0rem 3em;
   position: sticky;
-  opacity: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -463,4 +467,3 @@ button:focus {
   outline: 3px solid #4b4949ff;
   outline-offset: 3px;
 } 
-
