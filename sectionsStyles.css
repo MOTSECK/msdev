@@ -1,3 +1,7 @@
+html, body {
+  scroll-behavior: auto; /* désactive le scroll natif */
+  overflow-x: hidden;
+}
 
 section {
   will-change: transform, opacity;
