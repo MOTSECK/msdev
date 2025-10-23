@@ -1,4 +1,4 @@
-const hero = document.getElementById("hero");
+ const hero = document.getElementById("hero");
 let lastPointTime = 0;
 const interval = 35; // un peu plus rapide pour plus de fluidité
 const colors = [
@@ -97,11 +97,15 @@ document.addEventListener("DOMContentLoaded", nextStep);
 // hero resize
 
   function ajusterHero() {
-    const headerHeight = header.offsetHeight;
-    hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+    const isDesktop = window.innerWidth >= 1098; // 👉 seuil pour desktop
+    if (isDesktop) {
+      const headerHeight = header.offsetHeight;
+      hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+    } else {
+      // Sur mobile : on remet la hauteur par défaut
+      hero.style.minHeight = "";
+    }
   }
 
   ajusterHero();
   window.addEventListener("resize", ajusterHero);
-
-
