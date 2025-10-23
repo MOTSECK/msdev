@@ -24,6 +24,7 @@
   <link rel="stylesheet" href="headerStyles.css">
   <link rel="stylesheet" href="heroStyles.css" />
   <link rel="stylesheet" href="sectionsStyles.css" />
+  <link rel="stylesheet" href="footerStyles.css" />
   <link rel="stylesheet" href="darkmode.css" id="darkmode-style" disabled>
 
   <!-- --- Open Graph (Facebook, LinkedIn…) --- -->
@@ -45,7 +46,7 @@
 
   <!-- --- JSON-LD Schema.org --- -->
   <script type="application/ld+json">
-  {
+    {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MSDEV",
@@ -106,14 +107,14 @@
         <a href="#contact" title="Démarrons votre projet.">Démarrons votre projet.</a>
       </div>
     </section>
-<div>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<br><br><br><br><br><br>
-</div>
+    <div>
+      <br><br><br><br><br><br>
+      <br><br><br><br><br><br>
+      <br><br><br><br><br><br>
+      <br><br><br><br><br><br>
+      <br><br><br><br><br><br>
+      <br><br><br><br><br><br>
+    </div>
     <section role="region" aria-labelledby="aboutUs-title" id="aboutUs">
       <h2 id="aboutUs-title">Qui sommes-nous ?</h2>
       <article>
@@ -146,12 +147,41 @@
   </main>
 
   <footer role="contentinfo">
-    <p>&copy; 2025 MSDEV. Tous droits réservés.</p>
+    <div class="hero-title">
+      <span class="hero-logo" id="hero-logo">.</span>
+    </div>
+    <div>
+      <div>
+        <h2>Lien de navigation</h2>
+        <ul class="footer-links" role="menubar">
+          <li role="none"><a role="menuitem" href="#acceuil" title="Accueil">Accueil.</a></li>
+          <li role="none"><a role="menuitem" href="#aboutUs" title="À propos">Bio.</a></li>
+          <li role="none"><a role="menuitem" href="#realisations" title="Réalisations">Mission.</a></li>
+          <li role="none"><a role="menuitem" href="#services" title="Services">Services.</a></li>
+          <li role="none"><a role="menuitem" href="#contact" title="Contact">Contact.</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Détaille sur le contact</h2>
+        <p>6566464644</p>
+        <p>aa@gmail.com</p>
+      </div>
+      <div>
+        <h2>Nos résseau</h2>
+        <i>Instagram</i>
+        <i>linkedin</i>
+      </div>
+    </div>
+    <div>
+      <p>&copy; 2025 MSDEV. Tous droits réservés.</p>
+    </div>
   </footer>
-
   <script src="headerScripts.js"></script>
   <script src="heroScripts.js"></script>
   <script src="darkmode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
+  <script src="scroll.js"></script>
+
 </body>
 
 </html>
