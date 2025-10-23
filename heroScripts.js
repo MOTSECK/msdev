@@ -94,5 +94,14 @@ function nextStep() {
 
 document.addEventListener("DOMContentLoaded", nextStep);
 
+// hero resize
+
+  function ajusterHero() {
+    const headerHeight = header.offsetHeight;
+    hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+  }
+
+  ajusterHero();
+  window.addEventListener("resize", ajusterHero);
 
 
