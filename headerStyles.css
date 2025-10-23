@@ -370,7 +370,7 @@ header.hide {
 ================================== */
 @media (max-width: 1098px) {
   header {
-    padding: 1rem 1.2rem;
+    padding: 0rem 1.2rem;
     border-radius: 0 0 14px 14px;
     position: fixed;
     top: 0;
@@ -467,3 +467,4 @@ button:focus {
   outline: 3px solid #4b4949ff;
   outline-offset: 3px;
 } 
+
