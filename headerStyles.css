@@ -10,9 +10,10 @@
 
 
 html, body {
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* désactive le scroll natif */
+  overflow-x: hidden;
 }
+
 
 /* La barre de scroll entière */
 ::-webkit-scrollbar {
@@ -371,7 +372,7 @@ header.hide {
 @media (max-width: 1098px) {
   header {
     padding: 0rem 1.2rem;
-    border-radius: 0 0 14px 14px;
+    border-radius: 0;
     position: fixed;
     top: 0;
     width: 100%;
@@ -467,4 +468,3 @@ button:focus {
   outline: 3px solid #4b4949ff;
   outline-offset: 3px;
 } 
-
