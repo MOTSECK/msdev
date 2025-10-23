@@ -91,4 +91,17 @@ function nextStep() {
   setTimeout(nextStep, 200);
 }
 
+
 document.addEventListener("DOMContentLoaded", nextStep);
+
+// hero resize
+  const header = document.querySelector("header");
+
+  function ajusterHero() {
+    const headerHeight = header.offsetHeight;
+    hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
+    hero.style.marginTop = `${headerHeight}px`;
+  }
+
+  ajusterHero();
+  window.addEventListener("resize", ajusterHero);
