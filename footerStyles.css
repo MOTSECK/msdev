@@ -237,10 +237,6 @@ footer {
     margin-right: auto;
     display: block;
   }
-}
-
-/* PETITS ÉCRANS */
-@media (max-width: 480px) {
   .footerLogo-title {
     display: flex;
     justify-content: center; /* centre le titre */
