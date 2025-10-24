@@ -1,4 +1,4 @@
-// darkmode.js
+ // darkmode.js
 document.addEventListener("DOMContentLoaded", () => {
   const darkModeStyle = document.getElementById("darkmode-style");
 
