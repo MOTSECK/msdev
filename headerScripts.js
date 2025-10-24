@@ -216,3 +216,20 @@ function smoothScrollTo(targetY, duration = 2500) {
 window.history.scrollRestoration = "manual"; // empêche le navigateur de se souvenir du scroll précédent
 window.scrollTo(0, 0);
 
+
+  // Initialisation du scroll fluide
+  const lenis = new Lenis({
+    duration: 2.0, // durée du scroll (plus grand = plus lent)
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing doux
+    smoothWheel: true, // active la fluidité à la molette
+    smoothTouch: true, // fluide aussi sur mobile
+  });
+
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+
+  requestAnimationFrame(raf);
+
+
