@@ -1,19 +1,19 @@
-  const header = document.querySelector('header');
-  // --- Apparition lente du header au chargement ---
-    window.addEventListener('load', () => {
-        if (header) {
+const header = document.querySelector('header');
 
-            // On force un reflow pour que la transition démarre proprement
-            void header.offsetWidth;
+// --- Apparition lente du header au chargement ---
+window.addEventListener('load', () => {
+    if (header) {
+        // On force un reflow pour que la transition démarre proprement
+        void header.offsetWidth;
 
-            setTimeout(() => {
-                header.classList.add('begin');
-            }, 900); // petit délai fluide
-        }
+        setTimeout(() => {
+            header.classList.add('begin');
+        }, 900); // petit délai fluide
+    }
 
-        // 🔄 Forcer le scroll tout en haut une dernière fois (sécurité mobile/Safari)
-        setTimeout(() => window.scrollTo(0, 0), 50);
-    });
+    // ❌ supprimé : le scroll forcé qui faisait remonter la page
+});
+
 document.addEventListener("DOMContentLoaded", () => {
     // --- Sélecteurs sûrs ---
     const header = document.querySelector('header');
@@ -123,51 +123,59 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.tagName === "IMG") e.preventDefault();
     });
 
-    // --- Show/hide header & floatingNav on scroll ---
-    // --- Show/hide header & floatingNav on scroll ---
-    let lastScrollTop = 0;
-    let scrollReady = false;
 
-    // attendre un peu après l'animation de début
-    setTimeout(() => (scrollReady = true), 1000);
+// --- Show/hide header & floatingNav on scroll ---
+let lastScrollTop = 0;
+let scrollReady = false;
 
-    window.addEventListener("scroll", () => {
-        if (!scrollReady) return; // on attend que l'anim d'entrée soit finie
+// attendre un peu après l'animation de début
+setTimeout(() => (scrollReady = true), 1000);
 
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+window.addEventListener("scroll", () => {
+    if (!scrollReady) return; // on attend que l'anim d'entrée soit finie
 
-        // === MOBILE ===
-        if (window.innerWidth <= 768) {
-            if (scrollTop > lastScrollTop) {
-                // on descend → cacher le header
-                header.classList.add("hidden");
-                header.classList.remove("visible");
-            } else {
-                // on remonte → montrer le header
-                header.classList.add("visible");
-                header.classList.remove("hidden");
-            }
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-            // floatingNav désactivé sur mobile
+    // === MOBILE ===
+    if (window.innerWidth <= 1098) {
+        if (scrollTop > lastScrollTop) {
+            // on descend → cacher le header
+            header.classList.add("hidden");
+            header.classList.remove("visible");
+        } else {
+            // on remonte → montrer le header
+            header.classList.add("visible");
+            header.classList.remove("hidden");
+        }
+
+        // floatingNav désactivé sur mobile
+        floatingNav.classList.remove("active");
+    }
+
+    // === DESKTOP ===
+    else {
+        if (scrollTop > 150 && scrollTop > lastScrollTop) {
+            // on descend → cacher le header et montrer floatingNav
+            header.classList.add("hide");
+            floatingNav.classList.add("active");
+        } 
+        else if (scrollTop < lastScrollTop) {
+            // on remonte → cacher le floatingNav
             floatingNav.classList.remove("active");
-        }
 
-        // === DESKTOP ===
-        else {
-            if (scrollTop > 150 && scrollTop > lastScrollTop) {
-                header.classList.add("hide");
-                floatingNav.classList.add("active");
-            } else if (scrollTop < lastScrollTop && scrollTop < 100) {
+            // si on est presque en haut → montrer le header
+            if (scrollTop < 100) {
                 header.classList.remove("hide");
-                floatingNav.classList.remove("active");
             }
-
-            // pas de hidden/visible sur desktop
-            header.classList.remove("hidden", "visible");
         }
 
-        lastScrollTop = Math.max(scrollTop, 0);
-    });
+        // pas de hidden/visible sur desktop
+        header.classList.remove("hidden", "visible");
+    }
+
+    lastScrollTop = Math.max(scrollTop, 0);
+});
+
 
 
     // --- Smooth anchors (utilise la fonction plus bas) ---
@@ -181,9 +189,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!target) return;
 
             e.preventDefault();
-            const offset = 80; // ajuste selon ta navbar fixe
+            const offset = 80; // ajuste selon la navbar fixe
             const targetY = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            smoothScrollTo(targetY, 500); // durée très lente
+            smoothScrollTo(targetY, 500); 
         });
     });
 }); // fin DOMContentLoaded
@@ -214,7 +222,7 @@ function smoothScrollTo(targetY, duration = 2500) {
 
 // --- Toujours revenir en haut au chargement ---
 window.history.scrollRestoration = "manual"; // empêche le navigateur de se souvenir du scroll précédent
-window.scrollTo(0, 0);
+
 
 
   // Initialisation du scroll fluide
