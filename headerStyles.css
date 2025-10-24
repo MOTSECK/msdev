@@ -168,6 +168,7 @@ header.hide {
 /* Style du lien du logo */
 .logo-link {
   text-decoration: none;
+  z-index: 2;
   /* Supprime le soulignement */
 }
 
@@ -212,6 +213,7 @@ header.hide {
   align-items: center;
   overflow: hidden;
   transition: right 0.4s ease;
+  z-index: 2;
 }
 
 /* ======== NAV-CENTER FLOTTANT ======== */
@@ -249,11 +251,11 @@ header.hide {
   display: flex;
   align-items: center;
   position: relative;
-  z-index: 2;
 }
 
 .nav-links li {
   position: relative;
+  z-index: 2;
 }
 
 .nav-links a {
@@ -310,7 +312,7 @@ header.hide {
   font-weight: 500;
   cursor: pointer;
   transition: color 0.4s ease;
-  z-index: 0;
+  z-index: 2;
 }
 
 .nav-btn .btn:hover {
