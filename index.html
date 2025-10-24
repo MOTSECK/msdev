@@ -26,6 +26,9 @@
   <link rel="stylesheet" href="sectionsStyles.css" />
   <link rel="stylesheet" href="footerStyles.css" />
   <link rel="stylesheet" href="darkmode.css" id="darkmode-style" disabled>
+  <!-- Font Awesome (correct link) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 
   <!-- --- Open Graph (Facebook, LinkedIn…) --- -->
   <meta property="og:title" content="MSDEV - Agence Web Créative et Moderne" />
@@ -146,36 +149,60 @@
 
   </main>
 
-  <footer role="contentinfo">
-    <div class="hero-title">
-      <span class="hero-logo" id="hero-logo">.</span>
+  <footer role="contentinfo" aria-label="Pied de page principal">
+    <!-- Bande supérieure -->
+    <div class="footerLogo-title" aria-hidden="true">
+      <span class="footer-logo" id="footer-logo">.</span>.
     </div>
-    <div>
-      <div>
-        <h2>Lien de navigation</h2>
+
+    <!-- Contenu principal -->
+    <div class="footer-content" role="navigation" aria-label="Liens du footer">
+      <!-- Navigation -->
+      <div class="footer-column">
+        <h2 class="footer-title">Liens de navigation</h2>
         <ul class="footer-links" role="menubar">
-          <li role="none"><a role="menuitem" href="#acceuil" title="Accueil">Accueil.</a></li>
-          <li role="none"><a role="menuitem" href="#aboutUs" title="À propos">Bio.</a></li>
-          <li role="none"><a role="menuitem" href="#realisations" title="Réalisations">Mission.</a></li>
-          <li role="none"><a role="menuitem" href="#services" title="Services">Services.</a></li>
-          <li role="none"><a role="menuitem" href="#contact" title="Contact">Contact.</a></li>
+          <li role="none"><a role="menuitem" href="#acceuil" title="Accueil">Accueil</a></li>
+          <li role="none"><a role="menuitem" href="#aboutUs" title="À propos">Bio</a></li>
+          <li role="none"><a role="menuitem" href="#realisations" title="Réalisations">Mission</a></li>
+          <li role="none"><a role="menuitem" href="#services" title="Services">Services</a></li>
+          <li role="none"><a role="menuitem" href="#contact" title="Contact">Contact</a></li>
         </ul>
       </div>
-      <div>
-        <h2>Détaille sur le contact</h2>
-        <p>6566464644</p>
-        <p>aa@gmail.com</p>
+
+      <!-- Contact -->
+      <div class="footer-column">
+        <h2 class="footer-title">Détails du contact</h2>
+        <div>
+          <p><i class="fa-solid fa-phone"></i> <a href="tel:+216566464644">+216 56 64 64 44</a></p>
+          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:aa@gmail.com">aa@gmail.com</a></p>
+        </div>
       </div>
-      <div>
-        <h2>Nos résseau</h2>
-        <i>Instagram</i>
-        <i>linkedin</i>
+
+      <!-- Réseaux sociaux -->
+      <div class="footer-column">
+        <h2 class="footer-title">Nos réseaux</h2>
+        <div class="footer-socials" role="group" aria-label="Réseaux sociaux">
+          <a href="#" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
       </div>
     </div>
-    <div>
-      <p>&copy; 2025 MSDEV. Tous droits réservés.</p>
+
+    <!-- Bas de page -->
+    <div class="footer-bottom">
+      <p>
+        &copy; 2025 <strong>MSDEV</strong> — Conçu avec
+        <span class="heart" aria-hidden="true">♥</span> par Mot Seck.
+      </p>
     </div>
+
   </footer>
+
+
+
+
+  <script src="footerScript.js"></script>
   <script src="headerScripts.js"></script>
   <script src="heroScripts.js"></script>
   <script src="darkmode.js"></script>
