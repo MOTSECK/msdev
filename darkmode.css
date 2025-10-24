@@ -105,3 +105,64 @@ header {
 ::-webkit-scrollbar-thumb:hover {
   background-color: #fff;
 }
+
+/* FOOTER DARKMODE  */
+footer {
+  background: #111; /* était #fff */
+  color: #fff;      /* était #111 */
+  box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.08); /* était rgba(0,0,0,0.08) */
+}
+.footer-content {
+  background: #111;
+}
+.footerLogo-title {
+  color: #fff; /* était #000 */
+}
+
+.footer-title::after {
+  background: #fff; /* était #000 */
+}
+
+.footer-links a,
+.footer-column a {
+  color: #fff; /* était #111 */
+}
+
+.footer-links a:hover,
+.footer-column a:hover {
+  color: #999; /* était #666 */
+}
+
+.footer-column i {
+  color: #fff; /* était #000 */
+}
+
+.footer-column i:hover {
+  color: #999; /* était #666 */
+}
+
+.footer-socials a {
+  color: #fff; /* était #111 */
+}
+
+.footer-socials a:hover {
+  color: #999; /* était #666 */
+}
+
+.footer-bottom {
+  background: #fff; /* était #000 */
+  color: #111;      /* était #fff */
+  border-top: 1px solid rgba(0, 0, 0, 0.08); /* était rgba(255,255,255,0.08) */
+}
+
+.footer-bottom .heart {
+  color: #111; /* était #fff */
+}
+
+.footer-bottom .heart:hover {
+  color: #ff0044; /* reste identique */
+}
+
+.footer-contact hr {
+  border: 1px solid #fff; /* était #111 */
+}
