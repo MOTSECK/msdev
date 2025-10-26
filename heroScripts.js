@@ -129,18 +129,3 @@ if (toggle) {
 }
 
 
-// hero resize
-
-  function ajusterHero() {
-    const isDesktop = window.innerWidth >= 1098; // 👉 seuil pour desktop
-    if (isDesktop) {
-      const headerHeight = header.offsetHeight;
-      hero.style.minHeight = `calc(100vh - ${headerHeight}px)`;
-    } else {
-      // Sur mobile : on remet la hauteur par défaut
-      hero.style.minHeight = "";
-    }
-  }
-
-  ajusterHero();
-  window.addEventListener("resize", ajusterHero);

@@ -9,14 +9,13 @@ section {
 
 /* ===== Section À propos ===== */
 #aboutUs {
-
     position: relative;
     z-index: 2;
-    min-height: 100vh;
-    background-color: #F5F5F5;
+    min-height: 110vh;
+    background-color:  #8D99AE;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: -8vh;
+    margin-top: 0vh;
     /* chevauche légèrement la section précédente */
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
@@ -31,11 +30,11 @@ section {
 #realisations {
     position: relative;
     z-index: 3;
-    min-height: 100vh;
-    background-color: #8D99AE;
+    min-height: 110vh;
+    background-color: #eae9e9ff;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: -8vh;
+    margin-top: -5vh;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
@@ -49,11 +48,11 @@ section {
 #services {
     position: relative;
     z-index: 4;
-    min-height: 100vh;
+    min-height: 110vh;
     background-color: #FFBE0B;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: -8vh;
+    margin-top: -5vh;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
@@ -67,11 +66,11 @@ section {
 #contact {
     position: relative;
     z-index: 5;
-    min-height: 100vh;
+    min-height: 110vh;
     background-color: #3A86FF;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: -8vh;
+    margin-top: -5vh;
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
 }

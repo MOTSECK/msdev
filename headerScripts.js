@@ -3,15 +3,11 @@ const header = document.querySelector('header');
 // --- Apparition lente du header au chargement ---
 window.addEventListener('load', () => {
     if (header) {
-        // On force un reflow pour que la transition démarre proprement
         void header.offsetWidth;
-
         setTimeout(() => {
             header.classList.add('begin');
-        }, 900); // petit délai fluide
+        }, 900);
     }
-
-    // ❌ supprimé : le scroll forcé qui faisait remonter la page
 });
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -19,50 +15,78 @@ document.addEventListener("DOMContentLoaded", () => {
     const header = document.querySelector('header');
     const burger = document.getElementById('burger');
     const navCenter = document.querySelector('.nav-center');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileOverlay = document.querySelector('.mobile-overlay'); // ✅ Ajouté
 
-
-
-
-    // Si éléments manquants, on arrête proprement (évite erreurs JS)
-    if (!header || !navCenter) {
-        console.warn('Header ou .nav-center introuvable — script arrêté.');
+    // Si éléments manquants, on arrête proprement
+    if (!header || !navCenter || !mobileMenu) {
+        console.warn('Éléments introuvables — script arrêté.');
         return;
     }
 
-    // --- Mobile menu (création) ---
-    const mobileMenu = document.createElement('div');
-    mobileMenu.classList.add('mobile-menu');
-    mobileMenu.innerHTML = `
-    <ul class="nav-links">
-      <li><a href="#acceuil">Accueil.</a></li>
-      <li><a href="#aboutUs">Bio.</a></li>
-      <li><a href="#realisations">Mission.</a></li>
-      <li><a href="#services">Services.</a></li>
-      <li><a href="#contact">Contact.</a></li>
-    </ul>
-  `;
-    header.appendChild(mobileMenu);
-
-
-    // --- Burger toggle (si burger présent) ---
+    // --- Burger toggle ---
     if (burger) {
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('toggle');
-            mobileMenu.classList.toggle('active');
-            document.body.classList.toggle('no-scroll');
+        burger.addEventListener('click', (e) => {
+            e.stopPropagation(); // ✅ Empêche la propagation
+            toggleMobileMenu();
         });
     }
 
+    // Fonction pour ouvrir/fermer le menu
+    function toggleMobileMenu() {
+        const isActive = !mobileMenu.classList.contains('active');
+
+        burger.classList.toggle('toggle');
+        mobileMenu.classList.toggle('active');
+        document.body.classList.toggle('no-scroll');
+        burger.setAttribute('aria-expanded', isActive);
+
+        // Gérer l'overlay si il existe
+        if (mobileOverlay) {
+            mobileOverlay.classList.toggle('active');
+        }
+    }
+
+    // Fonction pour fermer le menu
+    function closeMobileMenu() {
+        burger.classList.remove('toggle');
+        mobileMenu.classList.remove('active');
+        document.body.classList.remove('no-scroll');
+        burger.setAttribute('aria-expanded', 'false');
+
+        if (mobileOverlay) {
+            mobileOverlay.classList.remove('active');
+        }
+    }
 
     // Fermer le menu mobile quand on clique un lien dedans
     mobileMenu.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
-            if (burger) burger.classList.remove('toggle');
-            mobileMenu.classList.remove('active');
-            document.body.classList.remove('no-scroll');
+            closeMobileMenu();
         }
     });
 
+    // Fermer le menu en cliquant sur l'overlay
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener('click', closeMobileMenu);
+    }
+
+    // Fermer le menu en cliquant à l'extérieur
+    document.addEventListener('click', (e) => {
+        if (mobileMenu.classList.contains('active') &&
+            !mobileMenu.contains(e.target) &&
+            e.target !== burger &&
+            !burger.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Fermer avec ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
 
     // --- Ripple buttons ---
     document.querySelectorAll('.btn').forEach(btn => {
@@ -111,7 +135,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // --- Créer UN SEUL floatingNav et l'ajouter ---
     const floatingNav = document.createElement('div');
     floatingNav.classList.add('nav-center-floating');
-    // on clone le contenu HTML (liens + nav-highlight)
     floatingNav.innerHTML = navCenter.innerHTML;
     document.body.appendChild(floatingNav);
 
@@ -123,65 +146,52 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.target.tagName === "IMG") e.preventDefault();
     });
 
+    // --- Show/hide header & floatingNav on scroll ---
+    let lastScrollTop = 0;
+    let scrollReady = false;
 
-// --- Show/hide header & floatingNav on scroll ---
-let lastScrollTop = 0;
-let scrollReady = false;
+    setTimeout(() => (scrollReady = true), 1000);
 
-// attendre un peu après l'animation de début
-setTimeout(() => (scrollReady = true), 1000);
-
-window.addEventListener("scroll", () => {
-    if (!scrollReady) return; // on attend que l'anim d'entrée soit finie
-
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    // === MOBILE ===
-    if (window.innerWidth <= 1098) {
-        if (scrollTop > lastScrollTop) {
-            // on descend → cacher le header
-            header.classList.add("hidden");
-            header.classList.remove("visible");
-        } else {
-            // on remonte → montrer le header
-            header.classList.add("visible");
-            header.classList.remove("hidden");
+    window.addEventListener("scroll", () => {
+        if (!scrollReady) return;
+        // ✅ CONDITION AJOUTÉE : Ne pas cacher le header si le menu mobile est ouvert
+        if (mobileMenu.classList.contains('active')) {
+            return; // On quitte la fonction si le menu est ouvert
         }
 
-        // floatingNav désactivé sur mobile
-        floatingNav.classList.remove("active");
-    }
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
 
-    // === DESKTOP ===
-    else {
-        if (scrollTop > 150 && scrollTop > lastScrollTop) {
-            // on descend → cacher le header et montrer floatingNav
-            header.classList.add("hide");
-            floatingNav.classList.add("active");
-        } 
-        else if (scrollTop < lastScrollTop) {
-            // on remonte → cacher le floatingNav
-            floatingNav.classList.remove("active");
-
-            // si on est presque en haut → montrer le header
-            if (scrollTop < 100) {
-                header.classList.remove("hide");
+        // === MOBILE ===
+        if (window.innerWidth <= 1098) {
+            if (scrollTop > lastScrollTop) {
+                header.classList.add("hidden");
+                header.classList.remove("visible");
+            } else {
+                header.classList.add("visible");
+                header.classList.remove("hidden");
             }
+            floatingNav.classList.remove("active");
+        }
+        // === DESKTOP ===
+        else {
+            if (scrollTop > 150 && scrollTop > lastScrollTop) {
+                header.classList.add("hide");
+                floatingNav.classList.add("active");
+            } else if (scrollTop < lastScrollTop) {
+                floatingNav.classList.remove("active");
+                if (scrollTop < 100) {
+                    header.classList.remove("hide");
+                }
+            }
+            header.classList.remove("hidden", "visible");
         }
 
-        // pas de hidden/visible sur desktop
-        header.classList.remove("hidden", "visible");
-    }
+        lastScrollTop = Math.max(scrollTop, 0);
+    });
 
-    lastScrollTop = Math.max(scrollTop, 0);
-});
-
-
-
-    // --- Smooth anchors (utilise la fonction plus bas) ---
+    // --- Smooth anchors ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            // si href = "#" ou ancre invalide, laisser comportement normal
             const href = this.getAttribute('href');
             if (!href || href === '#') return;
 
@@ -189,14 +199,14 @@ window.addEventListener("scroll", () => {
             if (!target) return;
 
             e.preventDefault();
-            const offset = 80; // ajuste selon la navbar fixe
+            const offset = 80;
             const targetY = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            smoothScrollTo(targetY, 500); 
+            smoothScrollTo(targetY, 500);
         });
     });
-}); // fin DOMContentLoaded
+});
 
-// --- smoothScrollTo (en dehors du DOMContentLoaded, disponible globalement) ---
+// --- smoothScrollTo ---
 function smoothScrollTo(targetY, duration = 2500) {
     const startY = window.scrollY || window.pageYOffset;
     const diff = targetY - startY;
@@ -222,22 +232,8 @@ function smoothScrollTo(targetY, duration = 2500) {
 
 // --- Toujours revenir en haut au chargement ---
 window.history.scrollRestoration = "manual"; // empêche le navigateur de se souvenir du scroll précédent
+window.scrollTo(0, 0);
 
 
-
-  // Initialisation du scroll fluide
-  const lenis = new Lenis({
-    duration: 2.0, // durée du scroll (plus grand = plus lent)
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // easing doux
-    smoothWheel: true, // active la fluidité à la molette
-    smoothTouch: true, // fluide aussi sur mobile
-  });
-
-  function raf(time) {
-    lenis.raf(time);
-    requestAnimationFrame(raf);
-  }
-
-  requestAnimationFrame(raf);
 
 

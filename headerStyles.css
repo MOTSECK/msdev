@@ -59,8 +59,7 @@ body {
 /* Empêche le scroll du body quand le menu est ouvert */
 body.no-scroll {
   overflow: hidden;
-  height: 100vh;
-  /* empêche tout défilement sur mobile */
+
 }
 
 /* ===============================
@@ -118,7 +117,7 @@ header {
   transform: translateY(-100%);
   opacity: 0;
   padding: 1.6rem 3rem 0rem 3em;
-  position: sticky;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -179,7 +178,7 @@ header.hide {
     color 0.3s,
     text-shadow 0.3s;
 }
-
+@media (min-width: 1098px) {
 /* Hover : effet "pop & glow" innovant */
 .logo-link:hover .logo-text {
   transform: scale(1.2) rotate(-5deg);
@@ -187,7 +186,7 @@ header.hide {
   /* Légère nuance pour le survol */
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
 }
-
+}
 /* Active : effet "press down" */
 .logo-link:active .logo-text {
   transform: scale(0.55) rotate(0deg);
@@ -196,6 +195,11 @@ header.hide {
   text-shadow: none;
 }
 
+
+.logo-link a{
+  color: inherit;
+  text-decoration: none;
+}
 .logo-text:focus {
   outline: none;
 }
@@ -366,6 +370,16 @@ header.hide {
   padding-bottom: 15px;
   z-index: 10;
 }
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
 
 /* ===============================
    📱 MOBILE VERSION
@@ -413,9 +427,17 @@ header.hide {
   .burger {
     display: flex;
   }
+  /* Overlay pour le menu mobile */
+
+
+.mobile-overlay.active {
+    display: block;
+}
+
 
   .mobile-menu {
     margin-top: 10px;
+    margin-bottom: 10px;
     border: 2px solid #ffffff;
     border-bottom: none;
     display: none;
