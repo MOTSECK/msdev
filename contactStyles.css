@@ -3,7 +3,7 @@
     position: relative;
     z-index: 5;
     min-height: 110vh;
-    background-color: #3A86FF;
+    background-color: #156efdff;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     margin-top: -5vh;
@@ -102,36 +102,63 @@
 
 /* Bouton d'envoi */
 .submit-btn {
-    width: 100%;
     padding: 1.2rem 2rem;
-    background: #ffffff;
-    color: #3A86FF;
-    border: none;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s ease;
+    display: inline-block;
     margin-top: 1.5rem;
     position: relative;
+    overflow: hidden;
+    background-color: #000000;
+    color: #ffffff;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: none;
+    font-size: 17.6342px;
+    font-weight: 600;
+    border-radius: 50px;
+    width: 100%;
+    text-align: center;
+    transition: all 0.4s ease;
+    z-index: 1;
 }
 
-.submit-btn:hover:not(:disabled),
-.submit-btn:focus:not(:disabled) {
-    background: #eaf0ff;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+/* Effet de survol avec pseudo-élément */
+.submit-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #ffffff;
+    z-index: -1;
+    transition: width 0.5s ease-in-out;
+    border-radius: 50px;
 }
 
-.submit-btn:active:not(:disabled) {
-    transform: translateY(0);
+.submit-btn:hover::before {
+    width: 100%;
 }
 
+.submit-btn:hover {
+    color: #000000;
+}
+
+/* États désactivés */
 .submit-btn:disabled {
     opacity: 0.7;
     cursor: not-allowed;
     transform: none !important;
 }
+
+.submit-btn:disabled::before {
+    width: 0%;
+}
+
+.submit-btn:disabled:hover {
+    color: #ffffff;
+}
+
+
 
 /* États du bouton submit */
 .btn-loading {
@@ -150,20 +177,33 @@
     100% { transform: rotate(360deg); }
 }
 
-/* Messages d'erreur */
+/* Messages d'erreur - Masqués par défaut */
 .error-message {
-    display: block;
-    color: #ffebee;
-    background: rgba(211, 47, 47, 0.8);
+    display: none; /* Masqué par défaut */
+    color: #fef2f2;
+    background: rgba(220, 38, 38, 0.9);
     font-size: 0.9rem;
     margin-top: 0.5rem;
     font-weight: 500;
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
-    border-left: 4px solid #ff5252;
+    border-left: 4px solid #ef4444;
     animation: fadeIn 0.3s ease-in-out;
 }
 
+/* Afficher seulement quand il y a du contenu */
+.error-message:not(:empty) {
+    display: block;
+}
+
+/* Champs en erreur - Appliquer seulement quand nécessaire via JS */
+/* .form-input.error-field,
+.form-select.error-field,
+.form-textarea.error-field {
+    border-color: #ef4444;
+    background: rgba(254, 242, 242, 0.95);
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+} */
 /* Champs en erreur */
 .form-input.error-field,
 .form-select.error-field,
@@ -208,7 +248,7 @@
 @keyframes fadeIn {
     from { 
         opacity: 0; 
-        transform: translateY(-10px); 
+        transform: 0f63d8fftranslateY(-10px); 
     }
     to { 
         opacity: 1; 
@@ -220,7 +260,7 @@
 .form-input:invalid:not(:focus):not(:placeholder-shown),
 .form-select:invalid:not(:focus),
 .form-textarea:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: #ff5252;
+    border-color: rgba(127, 174, 249, 0.9);
 }
 
 .form-input:valid:not(:focus):not(:placeholder-shown),

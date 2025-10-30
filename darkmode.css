@@ -166,3 +166,108 @@ footer {
 .footer-contact hr {
   border: 1px solid #fff; /* était #111 */
 }
+/* ===== Section Contact ===== */
+#contact {
+    background: rgba(30, 41, 59); /* Fond bleu-gris foncé */
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+}
+
+#contact:hover {
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+
+/* Container du formulaire */
+.contact-container {
+}
+
+/* Labels */
+.form-label {
+    color: #f8fafc; /* Blanc très clair */
+}
+
+/* Champs de formulaire */
+.form-input,
+.form-select,
+.form-textarea {
+    border: 2px solid rgba(148, 163, 184, 0.4);
+    background: rgba(248, 250, 252, 0.95); /* Fond très clair pour contraste */
+    color: #0f172a; /* Texte très foncé */
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    border-color: #60a5fa; /* Bleu clair pour focus */
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.3);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: #475569; /* Gris moyen */
+}
+
+/* Bouton d'envoi */
+/* Bouton d'envoi */
+.submit-btn {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Effet de survol avec pseudo-élément */
+.submit-btn::before {
+    background-color: #000000;
+}
+
+.submit-btn:hover {
+    color: #ffffff;
+}
+
+.submit-btn:disabled:hover {
+    color: #000000;
+}
+
+/* Messages d'erreur */
+.error-message {
+    color: #fef2f2; /* Rouge très clair */
+    background: rgba(220, 38, 38, 0.9); /* Rouge foncé */
+    border-left: 4px solid #ef4444; /* Rouge vif */
+}
+
+/* Champs en erreur */
+.form-input.error-field,
+.form-select.error-field,
+.form-textarea.error-field {
+    border-color: #ef4444; /* Rouge vif */
+    background: rgba(254, 242, 242, 0.95); /* Fond rouge très clair */
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+}
+
+/* Messages d'indication */
+.form-hint {
+    color: rgba(203, 213, 225, 0.9); /* Gris bleuté clair */
+}
+
+/* Messages de confirmation */
+.confirmation-message.success {
+    background: rgba(22, 101, 52, 0.9); /* Vert foncé */
+    color: #f0fdf4; /* Vert très clair */
+}
+
+.confirmation-message.error {
+    background: rgba(153, 27, 27, 0.9); /* Rouge foncé */
+    color: #fef2f2; /* Rouge très clair */
+}
+
+/* États de validation automatique */
+.form-input:invalid:not(:focus):not(:placeholder-shown),
+.form-select:invalid:not(:focus),
+.form-textarea:invalid:not(:focus):not(:placeholder-shown) {
+    border-color: #8198cfff; /* Rouge */
+}
+
+.form-input:valid:not(:focus):not(:placeholder-shown),
+.form-select:valid:not(:focus),
+.form-textarea:valid:not(:focus):not(:placeholder-shown) {
+    border-color: #16a34a; /* Vert */
+}
