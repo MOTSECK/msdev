@@ -181,7 +181,7 @@
                 );
                 
                 if (response.status === 200) {
-                    showConfirmation('✅ Message envoyé avec succès ! Je vous recontacte dans les 24h.', 'success');
+                    showConfirmation('Message envoyé avec succès ! Je vous recontacte dans les 24h.', 'success');
                     contactForm.reset();
                     clearAllErrors();
                 } else {
@@ -189,7 +189,7 @@
                 }
             } catch (error) {
                 console.error('Erreur envoi email:', error);
-                showConfirmation('❌ Erreur lors de l\'envoi. Veuillez réessayer.', 'error');
+                showConfirmation('Erreur lors de l\'envoi. Veuillez réessayer.', 'error');
             }
         }
 
