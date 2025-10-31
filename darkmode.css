@@ -175,7 +175,9 @@ footer {
 #contact:hover {
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
-
+.contact-title{
+    color: #fff;
+}
 /* Container du formulaire */
 .contact-container {
 }
@@ -270,4 +272,5 @@ footer {
 .form-select:valid:not(:focus),
 .form-textarea:valid:not(:focus):not(:placeholder-shown) {
     border-color: #16a34a; /* Vert */
+
 }
