@@ -159,14 +159,14 @@
           <!-- Nom et Prénom -->
           <div class="form-row">
             <div class="form-group">
-              <label for="lastname" class="form-label">Nom *</label>
+              <label for="lastname" class="form-label">Nom <span arial-hidden="true" >*</span></label>
               <input type="text" id="lastname" name="lastname" class="form-input" required aria-required="true"
                 aria-describedby="lastname-error" autocomplete="family-name">
               <span id="lastname-error" class="error-message" aria-live="polite"></span>
             </div>
 
             <div class="form-group">
-              <label for="firstname" class="form-label">Prénom *</label>
+              <label for="firstname" class="form-label">Prénom <span arial-hidden="true" >*</span></label>
               <input type="text" id="firstname" name="firstname" class="form-input" required aria-required="true"
                 aria-describedby="firstname-error" autocomplete="given-name">
               <span id="firstname-error" class="error-message" aria-live="polite"></span>
@@ -175,7 +175,7 @@
 
           <!-- Email -->
           <div class="form-group">
-            <label for="from_email" class="form-label">Email *</label>
+            <label for="from_email" class="form-label">Email <span arial-hidden="true" >*</span></label>
             <input type="email" id="from_email" name="from_email" class="form-input" required aria-required="true"
               aria-describedby="from_email-error from_email-hint" autocomplete="email">
             <span id="from_email-hint" class="form-hint">Nous ne partagerons jamais votre email</span>
@@ -184,7 +184,7 @@
 
           <!-- Type de projet -->
           <div class="form-group">
-            <label for="project_type" class="form-label">Type de projet *</label>
+            <label for="project_type" class="form-label">Type de projet <span arial-hidden="true" >*</span></label>
             <select id="project_type" name="project_type" class="form-select" required aria-required="true"
               aria-describedby="project_type-error">
               <option value="" disabled selected>Sélectionnez votre type de projet</option>
@@ -201,7 +201,7 @@
 
           <!-- Message -->
           <div class="form-group">
-            <label for="message" class="form-label">Description du projet *</label>
+            <label for="message" class="form-label">Description du projet <span arial-hidden="true" >*</span></label>
             <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true"
               aria-describedby="message-error message-hint"
               placeholder="Décrivez votre projet, vos objectifs, vos besoins spécifiques..."></textarea>
@@ -285,5 +285,6 @@
   <script src="contactScripts.js"></script>
 
 </body>
+
 
 </html>
