@@ -175,7 +175,7 @@ footer {
 #contact:hover {
     box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
-.contact-title{
+#contact-title{
     color: #fff;
 }
 /* Container du formulaire */
@@ -274,3 +274,4 @@ footer {
     border-color: #16a34a; /* Vert */
 
 }
+
