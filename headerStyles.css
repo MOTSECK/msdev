@@ -351,7 +351,8 @@ header.hide {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  background: #ffffffff;
+  background: #ffffffe6;
+  backdrop-filter: blur(8px);
   padding: 15px;
   border-radius: 25px;
   border: 2px solid #000000ff;
@@ -490,4 +491,5 @@ button:focus {
   outline: 3px solid #4b4949ff;
   outline-offset: 3px;
 } 
+
 
