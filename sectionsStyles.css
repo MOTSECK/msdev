@@ -1,81 +1,253 @@
-html, body {
-  scroll-behavior: auto; /* désactive le scroll natif */
-  overflow-x: hidden;
+/* =============================== 
+   🌍 GLOBAL 
+================================== */
+
+html,
+body {
+    scroll-behavior: auto; /* Désactive le scroll fluide natif */
+    overflow-x: hidden;
 }
 
 section {
-  will-change: transform, opacity;
-}
-
-/* ===== Section À propos ===== */
-#aboutUs {
+    will-change: transform, opacity;
     position: relative;
     z-index: 2;
-    min-height: 110vh;
-    background-color:  #8D99AE;
+    min-height: 100vh;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
-    margin-top: 0vh;
-    /* chevauche légèrement la section précédente */
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
     transition: transform 0.6s ease, box-shadow 0.6s ease;
+    overflow: hidden;
+    padding: 5rem 2rem;
 }
 
-#aboutUs:hover {
+/* Effet hover sur toutes les sections */
+section:hover {
     transform: translateY(-2vh);
-    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
+    box-shadow: 1px 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* ===== Section Réalisations ===== */
+/* TITRES GÉNÉRAUX */
+section h2[id$="-title"] {
+    text-align: center;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 700;
+    color: #0a0a0a;
+    margin-bottom: 4rem;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+section h2[id$="-title"]::after {
+    content: "";
+    display: block;
+    width: 70px;
+    height: 4px;
+    background: #000;
+    margin: 1rem auto 0;
+    border-radius: 10px;
+    opacity: 0.8;
+}
+
+/* =============================== 
+   ✨ SECTION À PROPOS
+================================== */
+#aboutUs {
+    background-color: #8D99AE;
+    z-index: 2;
+}
+
+/* BLOC GLOBAL */
+.about-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+.about-block.reverse {
+    flex-direction: row-reverse;
+}
+
+/* TEXTE */
+.about-text {
+    flex: 1 1 480px;
+    color: #0a0a0a;
+}
+
+.about-text h3 {
+    font-size: clamp(1.6rem, 2.8vw, 2rem);
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    color: #000;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    color: #222;
+    text-align: justify;
+}
+
+.about-text strong {
+    color: #000;
+}
+
+.about-text em {
+    color: #3A86FF;
+    font-style: normal;
+    font-weight: 600;
+}
+
+/* FOND / VISUEL */
+.about-visual {
+    flex: 1 1 480px;
+    border-radius: 25px;
+    height: 320px;
+    transition: all 0.6s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    position: relative;
+}
+
+/* 🎨 Couleurs selon data-color */
+.about-visual[data-color="bleu"] {
+    background: linear-gradient(135deg, #3A86FF, #4361EE);
+}
+
+.about-visual[data-color="gris"] {
+    background: linear-gradient(135deg, #8D99AE, #ADB5BD);
+}
+
+.about-visual[data-color="noir"] {
+    background: linear-gradient(135deg, #0a0a0a, #1E1E1E);
+}
+
+.about-visual[data-color="tomato"] {
+    background: linear-gradient(135deg, #ff3c3c, #ff7b00);
+}
+
+.about-visual:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* ANIMATION D’APPARITION */
+.about-block {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-block.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* BLOC GLOBAL */
+.about-block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    margin-bottom: 6rem;
+    position: relative;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+/* Bloc inverse pour alternance */
+.about-block.reverse {
+    flex-direction: row-reverse;
+}
+/* ALTERNANCE AUTOMATIQUE : blocs pairs inversés */
+#aboutUs .about-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* MOBILE: reste inchangé (texte au-dessus, visuel en dessous) */
+@media (max-width: 768px) {
+    #aboutUs .about-block,
+    #aboutUs .about-block:nth-child(even) {
+        flex-direction: column !important;
+        text-align: center;
+    }
+}
+
+/* MOBILE: passer tous les blocs en colonne */
+@media (max-width: 768px) {
+    .about-block,
+    .about-block.reverse {
+        flex-direction: column !important;
+        text-align: center;
+    }
+
+    .about-text {
+        flex: 1 1 100%;
+    }
+
+    .about-visual {
+        flex: 1 1 100%;
+        margin-top: 1.5rem;
+        height: 250px;
+    }
+}
+
+/* =============================== 
+   🎨 SECTION RÉALISATIONS
+================================== */
 #realisations {
-    position: relative;
+    background-color: #EAE9E9;
     z-index: 3;
-    min-height: 110vh;
-    background-color: #eae9e9ff;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
     margin-top: -5vh;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-#realisations:hover {
-    transform: translateY(-2vh);
-    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
-}
-
-/* ===== Section Services ===== */
+/* =============================== 
+   💼 SECTION SERVICES
+================================== */
 #services {
-    position: relative;
-    z-index: 4;
-    min-height: 110vh;
     background-color: #FFBE0B;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    z-index: 4;
     margin-top: -5vh;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-#services:hover {
-    transform: translateY(-2vh);
-    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
-}
-
-/* ===== Section Contact ===== */
+/* =============================== 
+   ✉️ SECTION CONTACT
+================================== */
 #contact {
-    position: relative;
-    z-index: 5;
-    min-height: 110vh;
     background-color: #3A86FF;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
+    z-index: 5;
     margin-top: -5vh;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
-    transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-#contact:hover {
-    transform: translateY(-2vh);
-    box-shadow: 1px 20px 40px rgba(0.1, 0.1, 0.1, 0.2);
+/* =============================== 
+   📱 RÉPONSIVE
+================================== */
+@media (max-width: 992px) {
+    section {
+        padding: 3rem 1.5rem;
+    }
+
+    section h2[id$="-title"]::after {
+        width: 50px;
+    }
+
+    .about-block {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-visual {
+        width: 100%;
+        height: 260px;
+    }
+
+    .about-text {
+        text-align: center;
+    }
 }
