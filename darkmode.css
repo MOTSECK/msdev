@@ -91,7 +91,8 @@ header {
 /* Burger menu styles for dark mode*/
 .burger {
   background: #000000ff;
-      border: 2px solid #ffffff;
+  backdrop-filter: blur(8px);
+  border: 2px solid #ffffff;
 }
 
 .burger div {
@@ -274,5 +275,6 @@ footer {
     border-color: #16a34a; /* Vert */
 
 }
+
 
 
