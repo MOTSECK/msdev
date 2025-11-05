@@ -126,20 +126,69 @@
         <a href="#contact" title="Démarrons votre projet.">Démarrons votre projet.</a>
       </div>
     </section>
+
     <div style="min-height: 100vh; top: 0" id="accueil"> .</div>
-    <section role="region" aria-labelledby="aboutUs-title" id="aboutUs">
-      <h2 id="aboutUs-title">Nous.</h2>
-      <article>
-        <div>
-          <p>MSDEV est une équipe jeune, ambitieuse et créative.</p>
-          <img src="banner1.jpeg" alt="Équipe MSDEV en action">
-          <p>Nous croyons que chaque idée mérite une présence en ligne moderne, fluide et accessible à tous.</p>
-          <p>Notre vision est simple : rendre le numérique accessible à chaque secteur et à chaque entreprise.</p>
-          <img src="banner2.jpeg" alt="Illustration de projets numériques MSDEV">
-          <p>Entre innovation et conception, nous traduisons vos besoins en code <span>&lt;/&gt;</span>.</p>
+
+    <section id="aboutUs" role="region" aria-labelledby="aboutUs-title">
+      <h2 id="aboutUs-title">À propos de nous</h2>
+
+      <!-- Bloc 1 : texte gauche / visuel droite -->
+      <article class="about-block" aria-labelledby="about-block-1">
+        <div class="about-text" id="about-block-1">
+          <h3>Une vision née du code</h3>
+          <p>Fondée par <strong>Mot Seck</strong>, développeur et concepteur passionné, <strong>MSDEV</strong> est une
+            agence numérique indépendante qui allie créativité, innovation et rigueur technique.</p>
+          <p>Notre mission : transformer les idées en expériences digitales uniques, performantes et accessibles à tous.
+          </p>
+          <p>Nous croyons qu’un projet réussi repose sur l’écoute, la clarté et l’exécution sans compromis.</p>
         </div>
+        <div class="about-visual" data-color="bleu"></div>
+      </article>
+
+      <!-- Bloc 2 : texte droite / visuel gauche -->
+      <article class="about-block" aria-labelledby="about-block-2">
+        <div class="about-text" id="about-block-2">
+          <h3>Une équipe, une expertise, une mission</h3>
+          <p>Autour de Mot Seck, une équipe jeune et dynamique de designers, développeurs et créatifs met son
+            savoir-faire au service de marques, d’entreprises et d’initiatives ambitieuses.</p>
+          <p>De la conception à la mise en ligne, nous accompagnons chaque client avec une approche sur mesure, moderne
+            et transparente.</p>
+          <p>Chez <strong>MSDEV</strong>, chaque ligne de code reflète notre philosophie : <em>Stay Honest.</em></p>
+        </div>
+        <div class="about-visual" data-color="tomato"></div>
+      </article>
+
+      <!-- Bloc 3 : texte gauche / visuel droite -->
+      <article class="about-block" aria-labelledby="about-block-3">
+        <div class="about-text" id="about-block-3">
+          <h3>Au-delà du digital</h3>
+          <p>MSDEV ne se limite pas à créer des sites web : nous bâtissons des identités, des expériences et des
+            stratégies numériques durables.</p>
+          <p>Notre objectif est simple : aider chaque projet à atteindre son plein potentiel grâce à des solutions
+            fiables, esthétiques et évolutives.</p>
+          <p>Parce qu’à l’ère du numérique, <strong>l’honnêteté, la clarté et la performance</strong> font toute la
+            différence.</p>
+        </div>
+        <div class="about-visual" data-color="gris"></div>
       </article>
     </section>
+
+
+    <script>
+      const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.about-block').forEach(block => {
+      observer.observe(block);
+    });
+    </script>
+
+
 
     <section role="region" aria-labelledby="realisations-title" id="realisations">
       <h2 id="realisations-title">Nos réalisations.</h2>
@@ -288,8 +337,3 @@
 
 
 </html>
-
-
-
-
-
