@@ -4,7 +4,8 @@
 
 html,
 body {
-    scroll-behavior: auto; /* Désactive le scroll fluide natif */
+    scroll-behavior: auto;
+    /* Désactive le scroll fluide natif */
     overflow-x: hidden;
 }
 
@@ -146,6 +147,7 @@ section h2[id$="-title"]::after {
     opacity: 1;
     transform: translateY(0);
 }
+
 /* BLOC GLOBAL */
 .about-block {
     display: flex;
@@ -164,24 +166,16 @@ section h2[id$="-title"]::after {
 .about-block.reverse {
     flex-direction: row-reverse;
 }
+
 /* ALTERNANCE AUTOMATIQUE : blocs pairs inversés */
 #aboutUs .about-block:nth-child(even) {
     flex-direction: row-reverse;
 }
 
-/* MOBILE: reste inchangé (texte au-dessus, visuel en dessous) */
-@media (max-width: 768px) {
-    #aboutUs .about-block,
-    #aboutUs .about-block:nth-child(even) {
-        flex-direction: column !important;
-        text-align: center;
-    }
-}
-
 /* MOBILE: passer tous les blocs en colonne */
-@media (max-width: 768px) {
-    .about-block,
-    .about-block.reverse {
+@media (max-width: 1098px) {
+
+    #aboutUs .about-block {
         flex-direction: column !important;
         text-align: center;
     }
@@ -194,6 +188,84 @@ section h2[id$="-title"]::after {
         flex: 1 1 100%;
         margin-top: 1.5rem;
         height: 250px;
+    }
+}
+
+.about-visual {
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cascade-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    z-index: 5;
+    opacity: 0.9;
+    color: rgb(0, 0, 0);
+    pointer-events: none;
+}
+
+.cascade-container {
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    overflow: hidden;
+}
+
+.cascade-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(2.5rem, 6vw, 6rem);
+    font-weight: 800;
+    letter-spacing: 0.2em;
+    color: white;
+    opacity: 0;
+    filter: blur(3px);
+    pointer-events: none;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.15);
+}
+
+@keyframes floatCascade {
+    0% {
+        transform: translate(-50%, 70%);
+        opacity: 0;
+        filter: blur(6px);
+    }
+
+    25% {
+        opacity: 0.3;
+        filter: blur(3px);
+    }
+
+    50% {
+        transform: translate(-50%, 0%);
+        opacity: 1;
+        filter: blur(0);
+    }
+
+    75% {
+        opacity: 0.4;
+        filter: blur(3px);
+    }
+
+    100% {
+        transform: translate(-50%, -70%);
+        opacity: 0;
+        filter: blur(6px);
     }
 }
 
