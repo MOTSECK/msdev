@@ -142,7 +142,10 @@
           </p>
           <p>Nous croyons qu’un projet réussi repose sur l’écoute, la clarté et l’exécution sans compromis.</p>
         </div>
-        <div class="about-visual" data-color="bleu"></div>
+        <div class="about-visual" data-color="bleu">
+          <h2 class="cascade-title">MSDEV.</h2>
+          <div class="cascade-container"></div>
+        </div>
       </article>
 
       <!-- Bloc 2 : texte droite / visuel gauche -->
@@ -153,23 +156,29 @@
             savoir-faire au service de marques, d’entreprises et d’initiatives ambitieuses.</p>
           <p>De la conception à la mise en ligne, nous accompagnons chaque client avec une approche sur mesure, moderne
             et transparente.</p>
-          <p>Chez <strong>MSDEV</strong>, chaque ligne de code reflète notre philosophie : <em>Stay Honest.</em></p>
+          <p>Chez <strong>MSDEV.</strong>, chaque ligne de code reflète notre philosophie : <em>Stay Honest.</em></p>
         </div>
-        <div class="about-visual" data-color="tomato"></div>
+        <div class="about-visual" data-color="tomato">
+          <h2 class="cascade-title">MSDEV.</h2>
+          <div class="cascade-container"></div>
+        </div>
       </article>
 
       <!-- Bloc 3 : texte gauche / visuel droite -->
       <article class="about-block" aria-labelledby="about-block-3">
         <div class="about-text" id="about-block-3">
           <h3>Au-delà du digital.</h3>
-          <p>MSDEV ne se limite pas à créer des sites web : nous bâtissons des identités, des expériences et des
+          <p>MSDEV. ne se limite pas à créer des sites web : nous bâtissons des identités, des expériences et des
             stratégies numériques durables.</p>
           <p>Notre objectif est simple : aider chaque projet à atteindre son plein potentiel grâce à des solutions
             fiables, esthétiques et évolutives.</p>
           <p>Parce qu’à l’ère du numérique, <strong>l’honnêteté, la clarté et la performance</strong> font toute la
             différence.</p>
         </div>
-        <div class="about-visual" data-color="gris"></div>
+        <div class="about-visual" data-color="gris">
+          <h2 class="cascade-title">MSDEV.</h2>
+          <div class="cascade-container"></div>
+        </div>
       </article>
     </section>
 
@@ -186,6 +195,77 @@
     document.querySelectorAll('.about-block').forEach(block => {
       observer.observe(block);
     });
+
+(function() {
+  const container = document.querySelector('.cascade-container');
+  const textContent = 'MSDEV.';
+  const duration = 4000; // durée totale d'une cascade (ms)
+  const interval = 1000; // délai entre chaque apparition
+
+  function spawnCascade() {
+    const text = document.createElement('div');
+    text.className = 'cascade-text';
+    text.textContent = textContent;
+
+    // Couleur adaptative si mode sombre clair
+    const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    text.style.color = dark ? '#ffffff' : '#000000';
+
+    text.style.animation = `floatCascade ${duration}ms ease-in-out forwards`;
+    container.appendChild(text);
+
+    // Supprimer après la durée
+    setTimeout(() => text.remove(), duration);
+  }
+
+  // Lancer les animations infinies
+  setInterval(spawnCascade, interval);
+
+  // Lancer un petit lot initial
+  for (let i = 0; i < 3; i++) {
+    setTimeout(spawnCascade, i * 600);
+  }
+    // === Déclencheur d'apparition des sections (tu peux le garder) ===
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add('visible');
+    });
+  });
+  document.querySelectorAll('.about-block').forEach(block => observer.observe(block));
+
+  // === Animation en cascade infinie pour CHAQUE bloc ===
+  document.querySelectorAll('.about-visual').forEach(visual => {
+    const container = visual.querySelector('.cascade-container');
+    const textContent = 'MSDEV.';
+    const duration = 4000; // durée d'une animation
+    const interval = 1000; // fréquence d'apparition
+
+    function spawnCascade() {
+      const text = document.createElement('div');
+      text.className = 'cascade-text';
+      text.textContent = textContent;
+
+      // Couleur selon mode clair/sombre
+      const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      text.style.color = dark ? '#fff' : '#000';
+
+      text.style.animation = `floatCascade ${duration}ms ease-in-out forwards`;
+      container.appendChild(text);
+
+      setTimeout(() => text.remove(), duration);
+    }
+
+    // Boucle infinie dans chaque visuel
+    setInterval(spawnCascade, interval);
+
+    // Apparitions initiales décalées
+    for (let i = 0; i < 3; i++) {
+      setTimeout(spawnCascade, i * 700);
+    }
+  });
+})();
+
+
     </script>
 
 
@@ -337,4 +417,3 @@
 
 
 </html>
-
