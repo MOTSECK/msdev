@@ -109,7 +109,7 @@ section h2[id$="-title"]::after {
 }
 
 .about-text em {
-  color: #3A86FF;
+  color: hsl(209, 66%, 86%);
   font-style: normal;
   font-weight: 600;
 }
