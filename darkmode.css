@@ -169,7 +169,7 @@ footer {
 }
 /* ===== Section Contact ===== */
 #contact {
-    background: rgba(30, 41, 59); /* Fond bleu-gris foncé */
+    background: rgb(0, 40, 104);
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
 }
 
@@ -178,9 +178,6 @@ footer {
 }
 #contact-title{
     color: #fff;
-}
-/* Container du formulaire */
-.contact-container {
 }
 
 /* Labels */
@@ -276,5 +273,61 @@ footer {
 
 }
 
+section h2[id$="-title"] {
+    color: #ffffff;
+}
 
+section h2[id$="-title"]::after {
+    background: #ffffff;
+}
+#aboutUs {
+  background-color: rgba(30, 41, 59);
+  z-index: 2;
+  padding: 6rem 3rem;
+}
+.about-text {
+  color: #f2f2f2;
+}
 
+.about-text h3 {
+  color: #ffffff;
+}
+
+.about-text p {
+  color: #d3d3d3;
+}
+
+.about-text strong {
+  color: #ffffff;
+}
+
+.about-text em {
+  color: #6C9EFF; /* bleu clair élégant */
+}
+
+/* VISUELS */
+.about-visual[data-color="bleu"] {
+  background: linear-gradient(135deg, #1E2A78, #3A86FF);
+}
+
+.about-visual[data-color="gris"] {
+  background: linear-gradient(135deg, #2A2E35, #50555C);
+}
+
+.about-visual[data-color="tomato"] {
+  background: linear-gradient(135deg, #ff7b00, #ff3c3c);
+}
+
+.about-visual[data-color="noir"] {
+  background: linear-gradient(135deg, #f5f5f5, #bdbdbd);
+}
+
+/* Cascade */
+.cascade-title {
+  color: #ffffff;
+}
+
+.cascade-text {
+  color: #f9f9f9;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
