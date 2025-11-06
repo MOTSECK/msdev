@@ -189,21 +189,7 @@ document.addEventListener("DOMContentLoaded", () => {
         lastScrollTop = Math.max(scrollTop, 0);
     });
 
-    // --- Smooth anchors ---
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (!href || href === '#') return;
 
-            const target = document.querySelector(href);
-            if (!target) return;
-
-            e.preventDefault();
-            const offset = 80;
-            const targetY = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            smoothScrollTo(targetY, 500);
-        });
-    });
 });
 
 // --- smoothScrollTo ---
