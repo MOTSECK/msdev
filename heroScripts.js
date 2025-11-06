@@ -1,4 +1,4 @@
-/**
+ /**
  * Fonction pour animer des points autour de la souris sur un container
  * @param {HTMLElement} container - L'élément sur lequel apparaissent les points
  * @param {Object} options - Options de personnalisation
@@ -48,7 +48,8 @@ function initHeroPoints(container, options = {}) {
 
     setTimeout(() => point.remove(), lifeTime);
   });
-}
+} 
+
 
 /**
  * Fonction pour animer le logo lettre par lettre avec effet bounce
@@ -99,6 +100,19 @@ const hero = document.getElementById("hero");
 const logo = document.getElementById("hero-logo");
 const footer = document.querySelector("footer");
 const footerlogo = document.getElementById("footer-logo");
+// Sélectionner tous les éléments avec la classe "about-visual"
+const aboutVisuals = document.querySelectorAll(".about-visual");
+
+// Appliquer initHeroPoints à chacun
+aboutVisuals.forEach(el => {
+  initHeroPoints(el, {
+    colors: ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"],
+    interval: 35,
+    maxOffset: 40,
+    maxSize: 20,
+    lifeTime: 3000
+  });
+});
 
 initHeroPoints(hero, {
   colors: ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"],
@@ -127,5 +141,4 @@ const toggle = document.getElementById("toggle-dark");
 if (toggle) {
   toggle.addEventListener("click", () => document.body.classList.toggle("dark-mode"));
 }
-
 
