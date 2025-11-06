@@ -201,38 +201,52 @@
     });
 
 document.querySelectorAll('.cascade-container').forEach(container => {
-  const words = ['MSDEV.', 'DESIGN.', 'CODE.', 'VISION.', 'PASSION.']; // 🔁 Liste personnalisable
+  const words = ['MSDEV.', 'DESIGN.', 'CODE.', 'VISION.', 'PASSION.'];
   let index = 0;
+  let lastTime = performance.now();
+  const interval = 2500; // durée entre les mots (ms)
 
-  // Création du premier texte
+  // Crée le texte initial
   const textElement = document.createElement('div');
   textElement.className = 'cascade-text';
   textElement.textContent = words[index];
   container.appendChild(textElement);
 
-  // Fonction pour changer de texte avec animation fluide
   function nextCascade() {
     const oldText = container.querySelector('.cascade-text');
     const newText = document.createElement('div');
     newText.className = 'cascade-text';
     newText.textContent = words[(index + 1) % words.length];
 
-    // Appliquer l’animation CSS (floatCascade)
+    // Appliquer animation
     newText.style.animation = 'floatCascade 5s ease forwards';
     container.appendChild(newText);
 
-    // Faire monter l’ancien texte puis le retirer
-    oldText.style.transition = 'opacity 1s ease, transform 1.5s ease';
+    // Transition douce pour l’ancien texte
+    oldText.style.transition = 'opacity 1s ease, transform 1.2s ease';
     oldText.style.opacity = '0';
     oldText.style.transform = 'translate(-50%, -70%)';
 
-    // Nettoyage + passage au suivant
-    setTimeout(() => oldText.remove(), 1500);
+    // Nettoyage après transition
+    setTimeout(() => oldText.remove(), 1200);
+
     index = (index + 1) % words.length;
   }
 
-  // Lancer le cycle
-  setInterval(nextCascade, 2500);
+  // Boucle fluide avec horloge réelle
+  function animate(time) {
+    const elapsed = time - lastTime;
+
+    // Si l’intervalle est écoulé → changer de mot
+    if (elapsed >= interval) {
+      nextCascade();
+      lastTime = time;
+    }
+
+    requestAnimationFrame(animate);
+  }
+
+  requestAnimationFrame(animate);
 });
 
 
