@@ -315,11 +315,11 @@ section h2[id$="-title"]::after {
 }
 
 .about-visual[data-color="tomato"] {
-  background: linear-gradient(135deg, #ff3c3c, #ff7b00);
+  background: linear-gradient(135deg, #7a1a1a, #7c3c00);
 }
 
 .about-visual[data-color="noir"] {
-  background: linear-gradient(135deg, #0a0a0a, #1E1E1E);
+  background: linear-gradient(135deg, #7c7c7c, #cecece);
 }
 
 /* Cascade */
