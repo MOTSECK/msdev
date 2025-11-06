@@ -15,12 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   requestAnimationFrame(raf);
 
-  // Animation fluide de chaque section lors de l’apparition
-  const sections = document.querySelectorAll("section");
-  sections.forEach((sec) => {
-    sec.style.opacity = "0";
-    sec.style.transform = "translateY(80px)";
-  });
 
   const observer = new IntersectionObserver(
     (entries) => {
