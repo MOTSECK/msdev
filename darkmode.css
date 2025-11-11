@@ -1,12 +1,14 @@
- /* ==========  MODE SOMBRE ========== */
+/* =========================================================
+   🌙 MODE SOMBRE GLOBAL
+   ========================================================= */
 
-/* Couleurs globales inversées */
+/* --- Couleurs globales inversées --- */
 body {
   background-color: #000;
   color: #fff;
 }
 
-/* Liens */
+/* --- Liens --- */
 a {
   color: #fff;
 }
@@ -14,11 +16,26 @@ a:hover {
   color: #000;
 }
 
-/* HERO */
+/* --- Scrollbar sombre --- */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff6e;
+  border: 1px solid #7d7b7b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+}
+
+
+/* =========================================================
+   🦸‍♂️ SECTION HERO
+   ========================================================= */
+
 .hero {
   background: #000;
   color: #fff;
 }
+
+/* Bouton principal du Hero */
 .hero-btn a {
   background-color: #fff;
   color: #000;
@@ -36,25 +53,35 @@ a:hover {
   background: #fff;
 }
 
-/* HEADER */
+
+/* =========================================================
+   🧭 HEADER & NAVIGATION
+   ========================================================= */
+
 header {
   background: #000000e6;
 }
+
+/* Zone centrale de navigation */
 .nav-center,
 .nav-center-floating {
   background: #0e0e0e;
 }
+
+/* Liens du menu principal */
 .nav-links a {
   color: #fff;
 }
 .nav-links a:hover {
   color: #ffffffb0;
 }
+
+/* Élément surligné dans le menu */
 .nav-highlight {
   background: #000000;
 }
 
-/* Bouton principal (nav) */
+/* Bouton principal (dans la nav) */
 .nav-btn .btn {
   background-color: #fff;
   color: #000;
@@ -67,7 +94,7 @@ header {
   color: #fff;
 }
 
-/* Menu mobile */
+/* --- Menu mobile --- */
 .mobile-menu.active {
   background: #fff;
 }
@@ -78,246 +105,233 @@ header {
 .nav-links a:hover {
   color: #ffffffff;
 }
-.nav-center{
-    background: #ffffffff;
+.nav-center {
+  background: #ffffffff;
 }
 .nav-center-floating.active {
   background: #ffffffff;
 }
+
+/* Logo survolé */
 .logo-link:hover .logo-text {
   color: #ffffffff;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.41), 0 0 20px rgba(255, 255, 255, 0.38);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.41),
+               0 0 20px rgba(255, 255, 255, 0.38);
 }
-/* Burger menu styles for dark mode*/
+
+/* --- Burger menu (mobile) --- */
 .burger {
   background: #000000ff;
   backdrop-filter: blur(8px);
   border: 2px solid #ffffff;
 }
-
 .burger div {
   background: #ffffffff;
 }
-/* Scrollbar sombre */
-::-webkit-scrollbar-thumb {
-  background-color: #ffffff6e;
-  border: 1px solid #7d7b7b;
-}
-::-webkit-scrollbar-thumb:hover {
-  background-color: #fff;
+
+
+/* =========================================================
+   🦶 FOOTER (MODE SOMBRE)
+   ========================================================= */
+
+footer {
+  background: #000000;
+  color: #fff;
+  box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.08);
 }
 
-/* FOOTER DARKMODE  */
-footer {
-  background: #000000; /* était #fff */
-  color: #fff;      /* était #111 */
-  box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.08); /* était rgba(0,0,0,0.08) */
-}
 .footer-content {
   background: #000000;
 }
 .footerLogo-title {
-  color: #fff; /* était #000 */
+  color: #fff;
 }
-
 .footer-title::after {
-  background: #fff; /* était #000 */
+  background: #fff;
 }
 
+/* Liens & colonnes */
 .footer-links a,
 .footer-column a {
-  color: #fff; /* était #111 */
+  color: #fff;
 }
-
 .footer-links a:hover,
 .footer-column a:hover {
-  color: #999; /* était #666 */
+  color: #999;
 }
 
+/* Icônes */
 .footer-column i {
-  color: #fff; /* était #000 */
+  color: #fff;
 }
-
 .footer-column i:hover {
-  color: #999; /* était #666 */
+  color: #999;
 }
 
+/* Réseaux sociaux */
 .footer-socials a {
-  color: #fff; /* était #111 */
+  color: #fff;
 }
-
 .footer-socials a:hover {
-  color: #999; /* était #666 */
+  color: #999;
 }
 
+/* Bas de page */
 .footer-bottom {
-  background: #fff; /* était #000 */
-  color: #000000;      /* était #fff */
-  border-top: 1px solid rgba(0, 0, 0, 0.08); /* était rgba(255,255,255,0.08) */
+  background: #fff;
+  color: #000000;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
-
 .footer-bottom .heart {
-  color: #000000; /* était #fff */
+  color: #000000;
 }
-
 .footer-bottom .heart:hover {
-  color: #ff0044; /* reste identique */
+  color: #ff0044;
 }
 
+/* Contact */
 .footer-contact hr {
-  border: 1px solid #fff; /* était #111 */
+  border: 1px solid #fff;
 }
-/* ===== Section Contact ===== */
+
+
+/* =========================================================
+   📞 SECTION CONTACT
+   ========================================================= */
+
 #contact {
-    background: rgb(0, 40, 104);
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+  background: rgb(0, 0, 0);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
 }
-
 #contact:hover {
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
 }
-#contact-title{
-    color: #fff;
+#contact-title {
+  color: #fff;
 }
 
-/* Labels */
+/* --- Formulaire --- */
 .form-label {
-    color: #f8fafc; /* Blanc très clair */
+  color: #ffffff;
 }
-
-/* Champs de formulaire */
 .form-input,
 .form-select,
 .form-textarea {
-    border: 2px solid rgba(148, 163, 184, 0.4);
-    background: rgba(248, 250, 252, 0.95); /* Fond très clair pour contraste */
-    color: #0f172a; /* Texte très foncé */
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.95);
+  color: #ffffff;
 }
 
+/* États focus */
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-    border-color: #60a5fa; /* Bleu clair pour focus */
-    background: #ffffff;
-    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.3);
+  border-color: #000000;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.3);
+  color: #000;
 }
 
+/* Placeholder */
 .form-input::placeholder,
 .form-textarea::placeholder {
-    color: #475569; /* Gris moyen */
+  color: #000000;
 }
 
-/* Bouton d'envoi */
-/* Bouton d'envoi */
+/* Bouton d’envoi */
 .submit-btn {
-    background-color: #ffffff;
-    color: #000000;
+  background-color: #ffffff;
+  color: #000000;
 }
-
-/* Effet de survol avec pseudo-élément */
 .submit-btn::before {
-    background-color: #000000;
+  background-color: #000000;
 }
-
 .submit-btn:hover {
-    color: #ffffff;
+  color: #ffffff;
 }
-
 .submit-btn:disabled:hover {
-    color: #000000;
+  color: #000000;
 }
 
-/* Messages d'erreur */
+/* Messages d’erreur */
 .error-message {
-    color: #fef2f2; /* Rouge très clair */
-    background: rgba(220, 38, 38, 0.9); /* Rouge foncé */
-    border-left: 4px solid #ef4444; /* Rouge vif */
+  color: #fef2f2;
+  background: rgba(220, 38, 38, 0.9);
+  border-left: 4px solid #ef4444;
 }
-
-/* Champs en erreur */
 .form-input.error-field,
 .form-select.error-field,
 .form-textarea.error-field {
-    border-color: #ef4444; /* Rouge vif */
-    background: rgba(254, 242, 242, 0.95); /* Fond rouge très clair */
-    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  border-color: #ef4444;
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  color: #ffffff;
 }
 
-/* Messages d'indication */
+/* Messages d’indication */
 .form-hint {
-    color: rgba(203, 213, 225, 0.9); /* Gris bleuté clair */
+  color: rgba(203, 213, 225, 0.9);
 }
 
 /* Messages de confirmation */
 .confirmation-message.success {
-    background: rgba(22, 101, 52, 0.9); /* Vert foncé */
-    color: #f0fdf4; /* Vert très clair */
+  background: rgba(22, 101, 52, 0.9);
+  color: #f0fdf4;
 }
-
 .confirmation-message.error {
-    background: rgba(153, 27, 27, 0.9); /* Rouge foncé */
-    color: #fef2f2; /* Rouge très clair */
+  background: rgba(153, 27, 27, 0.9);
+  color: #fef2f2;
 }
 
 /* États de validation automatique */
 .form-input:invalid:not(:focus):not(:placeholder-shown),
 .form-select:invalid:not(:focus),
 .form-textarea:invalid:not(:focus):not(:placeholder-shown) {
-    border-color: #8198cfff; /* Rouge */
+  border-color: rgb(255, 255, 255);
 }
-
 .form-input:valid:not(:focus):not(:placeholder-shown),
 .form-select:valid:not(:focus),
 .form-textarea:valid:not(:focus):not(:placeholder-shown) {
-    border-color: #16a34a; /* Vert */
-
+  border-color: #ffffff;
 }
 
-section h2[id$="-title"] {
-    color: #ffffff;
-}
 
-section h2[id$="-title"]::after {
-    background: #ffffff;
-}
+/* =========================================================
+   👤 SECTION À PROPOS
+   ========================================================= */
+
 #aboutUs {
-  background-color: rgba(30, 41, 59);
+  background-color: rgb(0, 0, 0);
   z-index: 2;
 }
+
+/* Texte */
 .about-text {
   color: #f2f2f2;
 }
-
 .about-text h3 {
   color: #ffffff;
 }
-
 .about-text p {
   color: #d3d3d3;
 }
-
 .about-text strong {
   color: #ffffff;
 }
-
 .about-text em {
-  color: #6C9EFF; /* bleu clair élégant */
+  color: #6C9EFF;
 }
 
-/* VISUELS */
-/* 🎨 Couleurs selon data-color */
+/* Visuels colorés */
 .about-visual[data-color="bleu"] {
   background: linear-gradient(135deg, #1c417c, #21317a);
 }
-
 .about-visual[data-color="gris"] {
   background: linear-gradient(135deg, #4e5561, #5f6368);
 }
-
 .about-visual[data-color="tomato"] {
   background: linear-gradient(135deg, #7a1a1a, #7c3c00);
 }
-
 .about-visual[data-color="noir"] {
   background: linear-gradient(135deg, #7c7c7c, #cecece);
 }
@@ -326,8 +340,37 @@ section h2[id$="-title"]::after {
 .cascade-title {
   color: #ffffff;
 }
-
 .cascade-text {
   color: #f9f9f9;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================================
+   🧩 SECTIONS GÉNÉRALES
+   ========================================================= */
+
+section h2[id$="-title"] {
+  color: #ffffff;
+}
+section h2[id$="-title"]::after {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   💼 SECTION SERVICES
+   ========================================================= */
+
+#services {
+  background-color: #000000;
+}
+
+
+/* =========================================================
+   🏗️ SECTION RÉALISATIONS
+   ========================================================= */
+
+#realisations {
+  background-color: #000000;
 }
