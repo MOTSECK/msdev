@@ -323,18 +323,7 @@ footer {
 }
 
 /* Visuels colorés */
-.about-visual[data-color="bleu"] {
-  background: linear-gradient(135deg, #1c417c, #21317a);
-}
-.about-visual[data-color="gris"] {
-  background: linear-gradient(135deg, #4e5561, #5f6368);
-}
-.about-visual[data-color="tomato"] {
-  background: linear-gradient(135deg, #7a1a1a, #7c3c00);
-}
-.about-visual[data-color="noir"] {
-  background: linear-gradient(135deg, #7c7c7c, #cecece);
-}
+
 
 /* Cascade */
 .cascade-title {
