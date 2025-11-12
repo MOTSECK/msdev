@@ -8,7 +8,7 @@ function initHeroPoints(container, options = {}) {
 
   let lastPointTime = 0;
   const interval = options.interval || 35;
-  const colors = options.colors || ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"];
+  const colors = options.colors || ["#000", "#FFF", "#000", "#FFF", "#000"];
   const maxOffset = options.maxOffset || 40;
   const maxSize = options.maxSize || 30;
   const lifeTime = options.lifeTime || 3000;
@@ -106,7 +106,6 @@ const aboutVisuals = document.querySelectorAll(".about-visual");
 // Appliquer initHeroPoints à chacun
 aboutVisuals.forEach(el => {
   initHeroPoints(el, {
-    colors: ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"],
     interval: 35,
     maxOffset: 40,
     maxSize: 20,
@@ -115,21 +114,18 @@ aboutVisuals.forEach(el => {
 });
 
 initHeroPoints(hero, {
-  colors: ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"],
   interval: 35,
   maxOffset: 40,
   maxSize: 20,
   lifeTime: 3000
 });
 initHeroPoints(footer, {
-  colors: ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"],
   interval: 35,
   maxOffset: 40,
   maxSize: 20,
   lifeTime: 3000
 });
 initHeroPoints(header, {
-  colors: ["#0D0D0D", "#F5F5F5", "#3A86FF", "#FFBE0B", "#8D99AE"],
   interval: 35,
   maxOffset: 40,
   maxSize: 20,
