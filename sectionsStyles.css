@@ -292,58 +292,53 @@ section h2[id$="-title"]::after {
   gap: 0.5rem;
 }
 
-/* POINTS ANIMÉS – style moderne, réaliste */
+/* Style du texte */
+.loading-text {
+  letter-spacing: 1px;
+}
+
+/* Container des points */
 .dots {
-  display: inline-flex;
-  align-items: flex-end;
-  gap: 0.15rem;
+  display: flex;
+  gap: 0.15em;
 }
 
-.dot {
+/* Animation rebond moderne */
+.dots span {
   display: inline-block;
-  font-size: 1em;
-  animation: bounce-modern 1.2s infinite cubic-bezier(.28,.84,.42,1);
-  transform-origin: bottom;
-  padding-bottom: 0.1rem;
+  animation: bounceDot 0.6s infinite ease-in-out;
 }
 
-.dot:nth-child(2) {
+/* Délais pour effet vague */
+.dots span:nth-child(1) {
+  animation-delay: 0s;
+}
+.dots span:nth-child(2) {
   animation-delay: 0.12s;
 }
-
-.dot:nth-child(3) {
+.dots span:nth-child(3) {
   animation-delay: 0.24s;
 }
 
-/* rebond moderne avec amorti (spring bounce) */
-@keyframes bounce-modern {
+/* Rebond plus réaliste (physique légère) */
+@keyframes bounceDot {
   0% {
     transform: translateY(0) scale(1);
-    opacity: 0.7;
-  }
-  20% {
-    transform: translateY(-14px) scale(1.15);
     opacity: 1;
   }
-  40% {
-    transform: translateY(0) scale(0.95);
+  30% {
+    transform: translateY(-12px) scale(1.2);
+    opacity: 1;
   }
-  55% {
-    transform: translateY(-6px) scale(1.08);
-  }
-  70% {
-    transform: translateY(0) scale(0.98);
-  }
-  85% {
-    transform: translateY(-3px) scale(1.03);
+  60% {
+    transform: translateY(2px) scale(0.95);
+    opacity: 0.9;
   }
   100% {
     transform: translateY(0) scale(1);
-    opacity: 0.7;
+    opacity: 1;
   }
 }
-
-
 /* =============================== 
    💼 SECTION SERVICES
 ================================== */
