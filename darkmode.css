@@ -99,17 +99,17 @@ header {
   background: #fff;
 }
 .nav-links a {
-  color: #000000ff;
+  color: #ffffffff;
   border-color: #000;
 }
 .nav-links a:hover {
   color: #ffffffff;
 }
 .nav-center {
-  background: #ffffffff;
+  background: #ffffff24;
 }
 .nav-center-floating.active {
-  background: #ffffffff;
+  background: #ffffff24;
 }
 
 /* Logo survolé */

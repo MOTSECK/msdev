@@ -1,22 +1,37 @@
- /* ===== HERO SECTION NOIR & BLANC ===== */
+
+/* ===== HERO SECTION CENTRÉE & FULLSCREEN ===== */
 .hero {
-  position: fixed;
+  position: fixed;       /* déjà défini, reste fixe */
+  top: 0;
+  left: 0;
+  width: 100vw;          /* occupe toute la largeur de l'écran */
+  height: 100vh;         /* occupe toute la hauteur de l'écran */
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 115vh;
-  width: 100%;
+  justify-content: center; /* centre verticalement */
+  align-items: center;     /* centre horizontalement */
   text-align: center;
-  padding: 2rem;
-  background: #fff;
-  font-family: 'Tomato Grotesk', Arial, sans-serif;
-  color: #000;
   overflow: hidden;
+  margin-top: 55px;
   z-index: 1;
+  padding: 0;              /* pour que rien ne déborde */
 }
 
+/* Ajustements mobile pour que ça reste centré */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 100vh;     /* écran mobile full height */
+    width: 100vw;          /* occupe toute la largeur */
+    padding: 0 1rem;       /* un petit padding horizontal */
+  }
+  .hero-title, .hero-subtitle, .hero-btn {
+    margin-bottom: 2rem !important; /* espacement constant */
+  }
+}
+
+
 .hero-title, .hero-subtitle, .hero-btn {
+  margin: 0 !important; 
   position: relative;
   z-index: 10; /* au-dessus des points */
 }
@@ -71,7 +86,7 @@
   font-size: 17.6342px;
   font-weight: 600;
   border-radius: 50px;
-  padding: 1.25rem 2rem;
+  padding: 1.15rem 2rem;
   text-decoration: none;
   transition: all 0.4s ease;
   z-index: 0;
@@ -93,7 +108,7 @@
   width: 100%;
 }
 .hero-btn a:hover {
-  color: #000;
+  color: #000000ff;
 }
 
 /* ===== LOGO ===== */
@@ -168,6 +183,10 @@
   .hero-subtitle {
     font-size: 1.1rem;
   }
+  .hero-title, .hero-subtitle, .hero-btn {
+  margin-bottom: 15% !important; 
+
+}
 }
 
 

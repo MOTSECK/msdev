@@ -207,7 +207,7 @@ header.hide {
 /* --- Bloc central (liens) --- */
 .nav-center {
   position: relative;
-  background: #000000ff;
+  background: #00000014;
   border-radius: 14px;
   padding: 0.35rem 0.8rem;
   backdrop-filter: blur(8px);
@@ -229,7 +229,7 @@ header.hide {
   pointer-events: none;
   z-index: 20;
   backdrop-filter: blur(81px) !important;
-  background: #000000ff;
+  background: #00000021;
   border-radius: 14px;
   padding: 0.35rem 0.8rem;
   margin: 0; /* tu peux supprimer ton margin-left ici */
@@ -264,7 +264,7 @@ header.hide {
   display: block;
   padding: 0.5rem 1.1rem;
   font-size: 12.6342px;
-  color: #ffffffff;
+  color: #000000ff;
   text-decoration: none;
   border-radius: 30px;
   transition: color 0.3s ease;
@@ -275,7 +275,7 @@ header.hide {
 }
 
 .divider {
-  color: rgba(177, 177, 177, 0.47);
+  color: rgba(177, 177, 177, 0.17);
   font-weight: 500;
   margin: 0;
 }
