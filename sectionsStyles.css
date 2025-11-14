@@ -232,9 +232,7 @@ section h2[id$="-title"]::after {
     text-align: center;
   }
 
-  .about-text p {
-    text-align: center;
-  }
+
 
   .about-visual {
     width: 100%;
