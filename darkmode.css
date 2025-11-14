@@ -1,0 +1,371 @@
+/* =========================================================
+   🌙 MODE SOMBRE GLOBAL
+   ========================================================= */
+
+/* --- Couleurs globales inversées --- */
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+/* --- Liens --- */
+a {
+  color: #fff;
+}
+a:hover {
+  color: #000;
+}
+
+/* --- Scrollbar sombre --- */
+::-webkit-scrollbar-thumb {
+  background-color: #ffffff6e;
+  border: 1px solid #7d7b7b;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: #fff;
+}
+
+
+/* =========================================================
+   🦸‍♂️ SECTION HERO
+   ========================================================= */
+
+.hero {
+  background: #000;
+  color: #fff;
+}
+
+/* Bouton principal du Hero */
+.hero-btn a {
+  background-color: #fff;
+  color: #000;
+  border-color: #ffffff36;
+}
+.hero-btn a::before {
+  background-color: #000;
+}
+.hero-btn a:hover {
+  color: #fff;
+}
+
+/* Logo carré point */
+.hero-logo .dot {
+  background: #fff;
+}
+
+
+/* =========================================================
+   🧭 HEADER & NAVIGATION
+   ========================================================= */
+
+header {
+  background: #000000e6;
+}
+
+/* Zone centrale de navigation */
+.nav-center,
+.nav-center-floating {
+  background: #0e0e0e;
+}
+
+/* Liens du menu principal */
+.nav-links a {
+  color: #fff;
+}
+.nav-links a:hover {
+  color: #ffffffb0;
+}
+
+/* Élément surligné dans le menu */
+.nav-highlight {
+  background: #000000;
+}
+
+/* Bouton principal (dans la nav) */
+.nav-btn .btn {
+  background-color: #fff;
+  color: #000;
+  border-color: #ffffff36;
+}
+.nav-btn .btn::before {
+  background-color: #000;
+}
+.nav-btn .btn:hover {
+  color: #fff;
+}
+
+/* --- Menu mobile --- */
+.mobile-menu.active {
+  background: #fff;
+}
+.nav-links a {
+  color: #000000ff;
+  border-color: #000;
+}
+.nav-links a:hover {
+  color: #ffffffff;
+}
+.nav-center {
+  background: #ffffffff;
+}
+.nav-center-floating.active {
+  background: #ffffffff;
+}
+
+/* Logo survolé */
+.logo-link:hover .logo-text {
+  color: #ffffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.41),
+               0 0 20px rgba(255, 255, 255, 0.38);
+}
+
+/* --- Burger menu (mobile) --- */
+.burger {
+  background: #000000ff;
+  backdrop-filter: blur(8px);
+  border: 2px solid #ffffff;
+}
+.burger div {
+  background: #ffffffff;
+}
+
+
+/* =========================================================
+   🦶 FOOTER (MODE SOMBRE)
+   ========================================================= */
+
+footer {
+  background: #000000;
+  color: #fff;
+  box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.08);
+}
+
+.footer-content {
+  background: #000000;
+}
+.footerLogo-title {
+  color: #fff;
+}
+.footer-title::after {
+  background: #fff;
+}
+
+/* Liens & colonnes */
+.footer-links a,
+.footer-column a {
+  color: #fff;
+}
+.footer-links a:hover,
+.footer-column a:hover {
+  color: #999;
+}
+
+/* Icônes */
+.footer-column i {
+  color: #fff;
+}
+.footer-column i:hover {
+  color: #999;
+}
+
+/* Réseaux sociaux */
+.footer-socials a {
+  color: #fff;
+}
+.footer-socials a:hover {
+  color: #999;
+}
+
+/* Bas de page */
+.footer-bottom {
+  background: #fff;
+  color: #000000;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+.footer-bottom .heart {
+  color: #000000;
+}
+.footer-bottom .heart:hover {
+  color: #ff0044;
+}
+
+/* Contact */
+.footer-contact hr {
+  border: 1px solid #fff;
+}
+
+
+/* =========================================================
+   📞 SECTION CONTACT
+   ========================================================= */
+
+#contact {
+  background: rgb(0, 0, 0);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.4);
+}
+#contact:hover {
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.5);
+}
+#contact-title {
+  color: #fff;
+}
+
+/* --- Formulaire --- */
+.form-label {
+  color: #ffffff;
+}
+.form-input,
+.form-select,
+.form-textarea {
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: rgba(0, 0, 0, 0.95);
+  color: #ffffff;
+}
+
+/* États focus */
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  border-color: #000000;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.3);
+  color: #000;
+}
+
+/* Placeholder */
+/* .form-input::placeholder,
+.form-textarea::placeholder {
+  
+} */
+
+/* Bouton d’envoi */
+.submit-btn {
+  background-color: #ffffff;
+  color: #000000;
+}
+.submit-btn::before {
+  background-color: #000000;
+}
+.submit-btn:hover {
+  color: #ffffff;
+}
+.submit-btn:disabled:hover {
+  color: #000000;
+}
+
+/* Messages d’erreur */
+.error-message {
+  color: #fef2f2;
+  background: rgba(220, 38, 38, 0.9);
+  border-left: 4px solid #ef4444;
+}
+.form-input.error-field,
+.form-select.error-field,
+.form-textarea.error-field {
+  border-color: #ef4444;
+  background: rgba(0, 0, 0, 0.95);
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.3);
+  color: #ffffff;
+}
+
+/* Messages d’indication */
+.form-hint {
+  color: rgba(203, 213, 225, 0.9);
+}
+
+/* Messages de confirmation */
+.confirmation-message.success {
+  background: rgba(22, 101, 52, 0.9);
+  color: #f0fdf4;
+}
+.confirmation-message.error {
+  background: rgba(153, 27, 27, 0.9);
+  color: #fef2f2;
+}
+
+/* États de validation automatique */
+.form-input:invalid:not(:focus):not(:placeholder-shown),
+.form-select:invalid:not(:focus),
+.form-textarea:invalid:not(:focus):not(:placeholder-shown) {
+  border-color: rgb(255, 255, 255);
+}
+.form-input:valid:not(:focus):not(:placeholder-shown),
+.form-select:valid:not(:focus),
+.form-textarea:valid:not(:focus):not(:placeholder-shown) {
+  border-color: #ffffff;
+}
+
+
+/* =========================================================
+   👤 SECTION À PROPOS
+   ========================================================= */
+
+#aboutUs {
+  background-color: rgb(0, 0, 0);
+  z-index: 2;
+}
+
+/* Texte */
+.about-text {
+  color: #f2f2f2;
+}
+.about-text h3 {
+  color: #ffffff;
+}
+.about-text p {
+  color: #d3d3d3;
+}
+.about-text strong {
+  color: #ffffff;
+}
+.about-text em {
+  color: #6C9EFF;
+}
+
+/* Visuels colorés */
+
+
+/* Cascade */
+.cascade-title {
+  color: #ffffff;
+}
+.cascade-text {
+  color: #f9f9f9;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+}
+
+
+/* =========================================================
+   🧩 SECTIONS GÉNÉRALES
+   ========================================================= */
+
+section h2[id$="-title"] {
+  color: #ffffff;
+}
+section h2[id$="-title"]::after {
+  background: #ffffff;
+}
+
+
+/* =========================================================
+   💼 SECTION SERVICES
+   ========================================================= */
+
+#services {
+  background-color: #000000;
+}
+
+
+/* =========================================================
+   🏗️ SECTION RÉALISATIONS
+   ========================================================= */
+
+#realisations {
+  background-color: #000000;
+}
+.realisations-loading {
+  color: #ffffffff;
+}
+.section-bg {
+  opacity: 0.61;
+}

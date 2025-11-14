@@ -1,0 +1,495 @@
+/* ===============================
+    BASE GÉNÉRALE & TYPOGRAPHIE
+================================== */
+* {
+  font-family: 'Tomato Grotesk', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  scroll-behavior: auto; /* désactive le scroll natif */
+  overflow-x: hidden;
+}
+
+
+/* La barre de scroll entière */
+::-webkit-scrollbar {
+  width: 7px;
+  /* largeur verticale */
+  height: 10px;
+  /* hauteur horizontale */
+  backdrop-filter: blur(825px);
+}
+
+/* Le “track” : zone derrière la barre */
+::-webkit-scrollbar-track {
+  background: #969696;
+  backdrop-filter: blur(85px);
+  
+  /* couleur de fond */
+  border-radius: 10px;
+}
+
+/* La barre (thumb) : partie qu’on déplace */
+::-webkit-scrollbar-thumb {
+  background-color: #00000078;
+  /* couleur de la barre */
+  border-radius: 10px;
+  /* arrondir les coins */
+  border: 1px solid #ffffff7d;
+  /* créer un “padding” autour */
+}
+
+/* Au survol */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #000000;
+}
+
+
+body {
+  background-color: #ffffffff;
+  color: #0a0a0a;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+/* Empêche le scroll du body quand le menu est ouvert */
+body.no-scroll {
+  overflow: hidden;
+
+}
+
+/* ===============================
+   TITRES & TEXTES
+================================== */
+p {
+  font-size: 1.125rem;
+  margin-bottom: 1.2rem;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3.5vw, 2.2rem);
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1098px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+/* Animation d'entrée du header */
+header.begin {
+  transform: translateY(0);
+  opacity: 1;
+  transition: transform 1.6s ease, opacity 0.6s ease;
+}
+
+
+
+
+/* ===============================
+   EN-TÊTE & NAVIGATION
+================================== */
+header {
+  transform: translateY(-100%);
+  opacity: 0;
+  padding: 1.6rem 3rem 0rem 3em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: #ffffffe6;
+  backdrop-filter: blur(8px);
+  transition: opacity 1.6s ease, transform 2.9s ease;
+  z-index: 1000;
+}
+
+header.hide {
+  transform: translateY(-199px);
+  pointer-events: none;
+}
+/* Transition mobile */
+@media (max-width: 1098px) {
+  header.hidden {
+    transform: translateY(-199px);
+  }
+
+  header.visible {
+    transform: translateY(0);
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+  transition: all 1.6s ease;
+}
+
+/* --- Logo --- */
+/* Empêche la sélection du texte et configure le curseur */
+.no-select,
+.no-select * {
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  cursor: pointer;
+}
+
+/* Style du lien du logo */
+.logo-link {
+  text-decoration: none;
+  z-index: 2;
+  /* Supprime le soulignement */
+}
+
+/* Style du texte du logo */
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  display: inline-block;
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55),
+    color 0.3s,
+    text-shadow 0.3s;
+}
+@media (min-width: 1098px) {
+/* Hover : effet "pop & glow" innovant */
+.logo-link:hover .logo-text {
+  transform: scale(1.2) rotate(-5deg);
+  color: #1a1a1a;
+  /* Légère nuance pour le survol */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.1);
+}
+}
+/* Active : effet "press down" */
+.logo-link:active .logo-text {
+  transform: scale(0.55) rotate(0deg);
+  color: #000;
+  /* Couleur reste noire */
+  text-shadow: none;
+}
+
+
+.logo-link a{
+  color: inherit;
+  text-decoration: none;
+}
+.logo-text:focus {
+  outline: none;
+}
+
+/* --- Bloc central (liens) --- */
+.nav-center {
+  position: relative;
+  background: #000000ff;
+  border-radius: 14px;
+  padding: 0.35rem 0.8rem;
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: right 0.4s ease;
+  z-index: 2;
+}
+
+/* ======== NAV-CENTER FLOTTANT ======== */
+@media (min-width: 1098px) {
+.nav-center-floating {
+  position: fixed;
+  top: 2.3rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(-520px);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 20;
+  backdrop-filter: blur(81px) !important;
+  background: #000000ff;
+  border-radius: 14px;
+  padding: 0.35rem 0.8rem;
+  margin: 0; /* tu peux supprimer ton margin-left ici */
+  display: flex;
+  align-items: center;
+  transition: all 3s ease;
+}
+
+
+  .nav-center-floating.active {
+    opacity: 1;
+    z-index: 2000;
+    transform: translateX(-50%) translateY(0);
+    pointer-events: all;
+  }
+}
+
+/* --- Liste des liens --- */
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links li {
+  position: relative;
+  z-index: 2;
+}
+
+.nav-links a {
+  display: block;
+  padding: 0.5rem 1.1rem;
+  font-size: 12.6342px;
+  color: #ffffffff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #000000;
+}
+
+.divider {
+  color: rgba(177, 177, 177, 0.47);
+  font-weight: 500;
+  margin: 0;
+}
+
+/* --- Animation hover --- */
+.nav-highlight {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 40px;
+  width: 0;
+  background: #ffffff;
+  border-radius: 20px;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0;
+}
+
+/* ===============================
+   🎯 BOUTON PRINCIPAL
+================================== */
+.nav-btn .btn {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  background-color: #171616;
+  color: #ffffff;
+  border: 2px solid #00000036;
+  border-bottom: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  margin-top: 4px;
+  text-decoration: none;
+  font-size: 13.6342px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.4s ease;
+  z-index: 2;
+}
+
+.nav-btn .btn:hover {
+  color: #000000;
+}
+
+.nav-btn .btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #ffffff;
+  z-index: -1;
+  transition: width 0.5s ease-in-out;
+  border-radius: 50px;
+}
+
+.nav-btn .btn:hover::before {
+  width: 100%;
+}
+
+.nav-btn .btn span {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===============================
+   🍔 BURGER MENU
+================================== */
+.burger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  background: #ffffffe6;
+  backdrop-filter: blur(8px);
+  padding: 15px;
+  border-radius: 25px;
+  border: 2px solid #000000ff;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: #000000ff;
+  transition: all 0.4s ease;
+}
+
+.mobile-menu {
+  display: none;
+  backdrop-filter: blur(8px);
+  padding-bottom: 15px;
+  z-index: 10;
+}
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+/* ===============================
+   📱 MOBILE VERSION
+================================== */
+@media (max-width: 1098px) {
+  header {
+    padding: 0rem 1.2rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+
+  .navbar {
+    padding-top: 15px;
+    justify-content: space-between;
+  }
+
+  .nav-center {
+    display: none;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  .nav-center-floating {
+    display: none;
+  }
+
+  .nav-links a {
+    color: #ffffff;
+    font-size: larger;
+    border-right: 1px solid #ffffff;
+    border-left: 1px solid #ffffff;
+  }
+
+  .nav-links a:hover {
+    color: #ffffff;
+  }
+
+  .burger {
+    display: flex;
+  }
+  /* Overlay pour le menu mobile */
+
+
+.mobile-overlay.active {
+    display: block;
+}
+
+
+  .mobile-menu {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #ffffff;
+    border-bottom: none;
+    display: none;
+    padding: 1.7rem 1rem;
+    text-align: center;
+    
+
+  }
+
+  .mobile-menu.active {
+    background: #0e0e0e;
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: slideDown 0.8s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .burger.toggle div:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 5px);
+  }
+
+  .burger.toggle div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .burger.toggle div:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -5px);
+  }
+}
+
+
+/* ===============================
+   ♿️ ACCESSIBILITÉ VISUELLE
+================================== */
+a:focus:not(.logo-link),
+button:focus {
+  outline: 3px solid #4b4949ff;
+  outline-offset: 3px;
+} 
+
+
