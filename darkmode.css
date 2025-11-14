@@ -232,10 +232,6 @@ footer {
   color: #000;
 }
 
-/* Placeholder */
-.form-input::placeholder,
-.form-textarea::placeholder {
-}
 
 /* Bouton d’envoi */
 .submit-btn {
@@ -362,4 +358,5 @@ section h2[id$="-title"]::after {
 #realisations {
   background-color: #000000;
 }
+
 
