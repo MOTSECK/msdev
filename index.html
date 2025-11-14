@@ -272,29 +272,74 @@ document.querySelectorAll('.cascade-container').forEach(container => {
         <form class="contact-form" id="contactForm" method="POST" novalidate aria-labelledby="contact-title">
           <!-- Nom et Prénom -->
           <div class="form-row">
+            <!-- Nom -->
             <div class="form-group">
-              <label for="lastname" class="form-label">Nom <span arial-hidden="true" >*</span></label>
-              <input type="text" id="lastname" name="lastname" class="form-input" required aria-required="true"
-                aria-describedby="lastname-error" autocomplete="family-name">
+              <label for="lastname" class="form-label">
+            Nom <span aria-hidden="true">*</span>
+        </label>
+
+              <input
+            type="text"
+            id="lastname"
+            name="lastname"
+            class="form-input"
+            required
+            aria-required="true"
+            aria-describedby="lastname-error"
+            autocomplete="family-name"
+            placeholder="Votre nom"
+        >
+
               <span id="lastname-error" class="error-message" aria-live="polite"></span>
             </div>
 
+            <!-- Prénom -->
             <div class="form-group">
-              <label for="firstname" class="form-label">Prénom <span arial-hidden="true" >*</span></label>
-              <input type="text" id="firstname" name="firstname" class="form-input" required aria-required="true"
-                aria-describedby="firstname-error" autocomplete="given-name">
+              <label for="firstname" class="form-label">
+            Prénom <span aria-hidden="true">*</span>
+        </label>
+
+              <input
+            type="text"
+            id="firstname"
+            name="firstname"
+            class="form-input"
+            required
+            aria-required="true"
+            aria-describedby="firstname-error"
+            autocomplete="given-name"
+            placeholder="Votre prénom"
+        >
+
               <span id="firstname-error" class="error-message" aria-live="polite"></span>
             </div>
           </div>
 
           <!-- Email -->
           <div class="form-group">
-            <label for="from_email" class="form-label">Email <span arial-hidden="true" >*</span></label>
-            <input type="email" id="from_email" name="from_email" class="form-input" required aria-required="true"
-              aria-describedby="from_email-error from_email-hint" autocomplete="email">
-            <span id="from_email-hint" class="form-hint">Nous ne partagerons jamais votre email</span>
+            <label for="from_email" class="form-label">
+        Email <span aria-hidden="true">*</span>
+    </label>
+
+            <input
+        type="email"
+        id="from_email"
+        name="from_email"
+        class="form-input"
+        required
+        aria-required="true"
+        aria-describedby="from_email-error from_email-hint"
+        autocomplete="email"
+        placeholder="Votre adresse email"
+    >
+
+            <span id="from_email-hint" class="form-hint">
+        Nous ne partagerons jamais votre adresse email.
+    </span>
+
             <span id="from_email-error" class="error-message" aria-live="polite"></span>
           </div>
+
 
           <!-- Type de projet -->
           <div class="form-group">
@@ -343,7 +388,7 @@ document.querySelectorAll('.cascade-container').forEach(container => {
   <footer role="contentinfo" aria-label="Pied de page principal">
     <!-- Bande supérieure -->
     <div class="footerLogo-title" aria-hidden="true">
-      <span class="footer-logo" id="footer-logo"></span><span arial-hidden="true" >.</span>
+      <span class="footer-logo" id="footer-logo"></span><span arial-hidden="true" class="no-select">.</span>
     </div>
 
     <!-- Contenu principal -->
