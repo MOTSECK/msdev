@@ -256,17 +256,18 @@ document.querySelectorAll('.cascade-container').forEach(container => {
 
 
     <section role="region" aria-labelledby="realisations-title" id="realisations">
-      <h2 id="realisations-title" class="visually-hidden">Nos réalisations</h2>
+      <h2 id="realisations-title" class="sr-only">Nos réalisations</h2>
 
-      <div class="realisations-loading" aria-hidden="true">
+      <div class="realisations-loading" aria-label="On a Mission">
         <span class="loading-text">On a Mission</span>
-        <span class="dots">
-      <span class="dot">.</span>
-        <span class="dot">.</span>
-        <span class="dot">.</span>
+        <span class="dots" aria-hidden="true">
+      <span>.</span>
+        <span>.</span>
+        <span>.</span>
         </span>
       </div>
     </section>
+
 
 
     <section role="region" aria-labelledby="services-title" id="services">
