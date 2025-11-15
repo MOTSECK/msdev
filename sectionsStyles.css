@@ -28,8 +28,8 @@ section h2[id$="-title"] {
   text-align: center;
   font-size: clamp(2rem, 4vw, 2.8rem);
   font-weight: 850;
-  color: #0a0a0a;
-  margin-bottom: 4rem;
+  color: #ffffffff;
+  margin-bottom: 0rem;
   letter-spacing: 1px;
   position: relative;
 }
@@ -37,14 +37,17 @@ section h2[id$="-title"] {
 section h2[id$="-title"]::after {
   content: "";
   display: block;
-  width: 75%;
+  width: 100%;
   height: 4px;
-  background: #00000015;
+  background: #000000ff;
   margin: 1rem auto 0;
   border-radius: 10px;
   opacity: 0.8;
 }
-
+.barriereTitle{
+  background-image: linear-gradient(94deg, #345b5fff 0%, #3f565aff 50%, #675f62ff 100%);
+  border-radius: 15px 15px 10px 10px;">
+}
 /* =============================== 
    ✨ SECTION À PROPOS
 ================================== */
@@ -56,10 +59,7 @@ section h2[id$="-title"]::after {
   border-top-right-radius: 15px;
   padding: 0rem;
 }
-#aboutUs-title {
-  color: #ffffffff !important;
 
-}
 /* BLOC GLOBAL */
 .about-block {
   display: flex;
@@ -274,29 +274,24 @@ section h2[id$="-title"]::after {
 /* =============================== 
    🎨 SECTION RÉALISATIONS
 ================================== */
-/* Cache visuellement mais accessible */
-.visually-hidden {
-  position: absolute;
-  clip: rect(0 0 0 0);
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  white-space: nowrap;
-  border: 0;
-}
+
 
 /* SECTION FULLSCREEN */
 #realisations {
   position: relative;
   width: 100%;
-  height: 100vh;         /* Full screen */
+  min-height: 100vh;
   overflow: hidden;
-  z-index: 3;
+
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;   /* ← ceci est la bonne propriété */
+  justify-content: center;  /* ← centre verticalement */
+  align-items: center;      /* ← centre horizontalement */
+
+  z-index: 6;
+  padding: 0;
 }
+
 
 /* IMAGE BACKGROUND 100vh */
 .section-bg {
@@ -317,6 +312,9 @@ section h2[id$="-title"]::after {
   font-weight: 900;
   text-align: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   gap: 0.3rem;
   color: #000000;
 }
@@ -356,6 +354,7 @@ section h2[id$="-title"]::after {
   background-color: #ffffff;
   z-index: 4;
   margin-top: -5vh;
+  padding:0;
 }
 
 
@@ -367,8 +366,5 @@ section h2[id$="-title"]::after {
     padding: 3rem 1.5rem;
   }
 
-  section h2[id$="-title"]::after {
-    width: 50px;
-  }
 
 }
