@@ -78,7 +78,7 @@ header {
 
 /* Élément surligné dans le menu */
 .nav-highlight {
-  background: #000000;
+  background: #00000074;
 }
 
 /* Bouton principal (dans la nav) */
@@ -97,10 +97,6 @@ header {
 /* --- Menu mobile --- */
 .mobile-menu.active {
   background: #fff;
-}
-.nav-links a {
-  color: #ffffffff;
-  border-color: #000;
 }
 .nav-links a:hover {
   color: #ffffffff;
@@ -128,7 +124,14 @@ header {
 .burger div {
   background: #ffffffff;
 }
-
+@media (max-width: 1098px) {
+  .mobile-menu {
+    background: #000000e6;
+  }
+  .nav-links a {
+    color: #000000ff;
+}
+}
 
 /* =========================================================
    🦶 FOOTER (MODE SOMBRE)

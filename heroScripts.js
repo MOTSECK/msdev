@@ -125,12 +125,12 @@ initHeroPoints(footer, {
   maxSize: 20,
   lifeTime: 3000
 });
-initHeroPoints(header, {
-  interval: 35,
-  maxOffset: 40,
-  maxSize: 20,
-  lifeTime: 3000
-});
+// initHeroPoints(header, {
+//   interval: 35,
+//   maxOffset: 40,
+//   maxSize: 20,
+//   lifeTime: 3000
+// });
 animateLogo(logo, ["M", "S", "D", "E", "V"], { delayBetweenLetters: 200 });
 /* Option Dark Mode */
 const toggle = document.getElementById("toggle-dark");
