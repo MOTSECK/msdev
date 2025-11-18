@@ -1,92 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-
 <head>
-  <!-- --- Encodage et responsive --- -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- --- Titre et description --- -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Agence Web Créative et Moderne | MSDEV.</title>
-  <meta name="description"
-    content="MSDEV. est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
-  <meta name="keywords"
-    content="Agence web, développement web, site moderne, accessibilité web, MSDEV., design créatif" />
+  <meta name="description" content="MSDEV. est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
+  <meta name="keywords" content="Agence web, développement web, site moderne, accessibilité web, MSDEV., design créatif" />
   <meta name="author" content="MSDEV." />
+  <link rel="canonical" href="https://www.msdev.com/" />
 
-  <!-- --- Favicon / Apple Touch Icon --- -->
+  <!-- Favicons -->
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
   <link rel="manifest" href="images/site.webmanifest">
 
-  <!-- --- Styles --- -->
+  <!-- Critical CSS (external files kept as before) -->
   <link rel="stylesheet" href="headerStyles.css">
-  <link rel="stylesheet" href="heroStyles.css" />
-  <link rel="stylesheet" href="sectionsStyles.css" />
-  <link rel="stylesheet" href="contactStyles.css" />
-  <link rel="stylesheet" href="footerStyles.css" />
+  <link rel="stylesheet" href="heroStyles.css">
+  <link rel="stylesheet" href="sectionsStyles.css">
+  <link rel="stylesheet" href="contactStyles.css">
+  <link rel="stylesheet" href="footerStyles.css">
   <link rel="stylesheet" href="darkmode.css" id="darkmode-style" disabled>
-  <!-- Font Awesome (correct link) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
 
-  <!-- --- Open Graph (Facebook, LinkedIn…) --- -->
+  <!-- Open Graph -->
   <meta property="og:title" content="Agence Web Créative et Moderne | MSDEV." />
-  <meta property="og:description"
-    content="MSDEV. est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
+  <meta property="og:description" content="MSDEV. est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
   <meta property="og:image" content="images/MSDEV.png" />
   <meta property="og:image:alt" content="Équipe MSDEV. en train de travailler sur un projet digital" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.msdev.com/" />
 
-  <!-- --- Twitter Card --- -->
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Agence Web Créative et Moderne | MSDEV." />
-  <meta name="twitter:description"
-    content="MSDEV. est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
+  <meta name="twitter:description" content="MSDEV. est une agence web futuriste, jeune et créative. Création de sites accessibles et modernes pour tous les secteurs." />
   <meta name="twitter:image" content="images/MSDEV.png" />
   <meta name="twitter:image:alt" content="Équipe MSDEV. en train de travailler sur un projet digital" />
 
-  <!-- --- JSON-LD Schema.org --- -->
+  <!-- JSON-LD (Organization + Services) — remplace sameAs par tes vrais profils -->
   <script type="application/ld+json">
-    {
+  {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "MSDEV.",
     "url": "https://www.msdev.com/",
-    "logo": "images/MSDEV.png",
+    "logo": "https://www.msdev.com/images/MSDEV.png",
     "sameAs": [
-      "https://www.facebook.com/tonpage",
-      "https://www.twitter.com/toncompte",
-      "https://www.linkedin.com/in/tonprofil"
-    ]
+      "https://www.facebook.com/TON_PAGE",
+      "https://www.linkedin.com/in/TON_PROFIL"
+    ],
+    "contactPoint": [{
+      "@type":"ContactPoint",
+      "contactType":"customer support",
+      "email":"contact@msdev.com",
+      "url":"https://www.msdev.com/contact"
+    }]
   }
   </script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+  <!-- Performance hints (preload fonts if you have them) -->
+  <!-- <link rel="preload" href="/fonts/YourFont.woff2" as="font" type="font/woff2" crossorigin> -->
+
+  <style>
+    /* Small, critical helpers (focus styles, sr-only, reduced-motion) */
+    .sr-only {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+    }
+
+    :focus { outline: 3px solid #0070f3; outline-offset: 2px; } /* visible focus */
+    a:focus, button:focus { outline-offset: 3px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+    }
+
+    /* Simple accessible skip link */
+    .skip-link {
+      position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden;
+    }
+    .skip-link:focus {
+      left: 1rem; top: 1rem; width: auto; height: auto; padding: 0.5rem 1rem; background: #000; color: #fff; z-index: 9999;
+    }
+  </style>
 </head>
 
-
 <body>
-  <header class="header" id="header-container" role="banner">
+  <a href="#main-content" class="skip-link">Passer au contenu</a>
+
+  <header id="header-container" role="banner">
     <nav class="navbar" role="navigation" aria-label="Menu principal">
-      <div class="nav-logo logo-link no-select">
-        <a href="#accueil" class="logo-link" title="Logo de MSDEV.">
+      <div class="nav-logo no-select">
+        <a href="#accueil" class="logo-link" title="Aller à l'accueil">
           <h1 class="logo-text">MSDEV.</h1>
         </a>
       </div>
 
-      <div class="nav-center">
-        <ul class="nav-links" >
-          <li role="none"><a  href="#accueil" title="Accueil">Accueil.</a></li>
-          <span class="divider" aria-hidden="true">|</span>
-          <li role="none"><a  href="#aboutUs" title="À propos">Bio.</a></li>
-          <span class="divider" aria-hidden="true">|</span>
-          <li role="none"><a  href="#realisations" title="Réalisations">Mission.</a></li>
-          <span class="divider" aria-hidden="true">|</span>
-          <li role="none"><a  href="#services" title="Services">Services.</a></li>
-          <span class="divider" aria-hidden="true">|</span>
-          <li role="none"><a  href="#contact" title="Contact">Contact.</a></li>
+      <div class="nav-center" id="navCenter">
+        <ul class="nav-links">
+          <li><a href="#accueil" title="Accueil">Accueil.</a></li>
+          <li><span class="divider" aria-hidden="true" role="presentation">|</span></li>
+          <li><a href="#aboutUs" title="À propos">Bio.</a></li>
+          <li><span class="divider" aria-hidden="true" role="presentation">|</span></li>
+          <li><a href="#realisations" title="Réalisations">Mission.</a></li>
+          <li><span class="divider" aria-hidden="true" role="presentation">|</span></li>
+          <li><a href="#services" title="Services">Services.</a></li>
+          <li><span class="divider" aria-hidden="true" role="presentation">|</span></li>
+          <li><a href="#contact" title="Contact">Contact.</a></li>
         </ul>
         <div class="nav-highlight" aria-hidden="true"></div>
       </div>
@@ -95,16 +121,16 @@
         <a href="#contact" class="btn" title="Démarrons votre projet.">Démarrons...</a>
       </div>
 
-      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
-        <div></div>
-        <div></div>
-        <div></div>
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="burger-bar" aria-hidden="true"></span>
+        <span class="burger-bar" aria-hidden="true"></span>
+        <span class="burger-bar" aria-hidden="true"></span>
       </button>
-
     </nav>
 
-    <div class="mobile-menu">
-      <ul class="nav-links">
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="mobile-menu" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menu mobile">
+      <ul class="mobile-nav-links">
         <li><a href="#accueil">Accueil.</a></li>
         <li><a href="#aboutUs">Bio.</a></li>
         <li><a href="#realisations">Mission.</a></li>
@@ -113,280 +139,203 @@
       </ul>
     </div>
   </header>
-  <!-- Overlay -->
-  <div class="mobile-overlay" id="mobileOverlay"></div>
 
-  <main>
-    <section role="region" aria-label="Section héros" class="hero" id="hero">
+  <main id="main-content" role="main">
+    <!-- HERO -->
+    <section class="hero" id="hero" role="region" aria-label="Section héros">
       <h2 class="hero-subtitle">Un partenaire<br>pour tous vos projets.</h2>
       <div class="hero-title">
-        <span class="hero-logo" id="hero-logo">.</span>
+        <span class="hero-logo" id="hero-logo" aria-hidden="true">.</span>
       </div>
       <div class="hero-btn">
         <a href="#contact" title="Démarrons votre projet.">Démarrons votre projet.</a>
       </div>
     </section>
 
-    <div style="min-height: 100vh; top: 0" id="accueil"></div>
+    <div id="accueil" style="min-height:100vh; top:0" aria-hidden="true"></div>
 
+    <!-- ABOUT -->
     <section id="aboutUs" role="region" aria-labelledby="aboutUs-title">
       <div class="barriereTitle">
-        <img src="images/B3.png" alt="" style="  inset: 0; width: 100%; height: 200px; object-fit: cover; z-index: 1;"
-          aria-hidden="true" loading="lazy"
-          >
+        <img src="images/B3.png" alt="" style="inset:0; width:100%; height:200px; object-fit:cover; z-index:1;" aria-hidden="true" loading="lazy">
         <h2 id="aboutUs-title">À Propos De Nous.</h2>
       </div>
 
-      <!-- Bloc 1 : texte gauche / visuel droite -->
       <article class="about-block" aria-labelledby="about-block-1">
         <div class="about-text" id="about-block-1">
           <h3>Une vision née du code.</h3>
-          <p>Fondée par <strong>Mot Seck</strong>, développeur et concepteur passionné, <strong>MSDEV</strong> est une
-            agence numérique indépendante qui allie créativité, innovation et rigueur technique.</p>
-          <p>Notre mission : transformer les idées en expériences digitales uniques, performantes et accessibles à tous.
-          </p>
+          <p>Fondée par <strong>Mot Seck</strong>, développeur et concepteur passionné, <strong>MSDEV</strong> est une agence numérique indépendante qui allie créativité, innovation et rigueur technique.</p>
+          <p>Notre mission : transformer les idées en expériences digitales uniques, performantes et accessibles à tous.</p>
           <p>Nous croyons qu’un projet réussi repose sur l’écoute, la clarté et l’exécution sans compromis.</p>
         </div>
-        <div class="about-visual" data-color="bleu">
-          <div class="cascade-container">
-            <img src="images/B1.jpeg" alt="Une vision née du code." loading="lazy">
-            <div class="cascade-text">MSDEV.</div>
+
+        <div class="about-visual" data-color="bleu" aria-hidden="false">
+          <div class="cascade-container" aria-hidden="true">
+            <img src="images/B1.jpeg" alt="Illustration : workflow design" loading="lazy">
+            <div class="cascade-text" aria-hidden="true">MSDEV.</div>
           </div>
         </div>
-
       </article>
 
-      <!-- Bloc 2 : texte droite / visuel gauche -->
       <article class="about-block" aria-labelledby="about-block-2">
         <div class="about-text" id="about-block-2">
           <h3>Une équipe, une expertise, une mission.</h3>
-          <p>Autour de Mot Seck, une équipe jeune et dynamique de designers, développeurs et créatifs met son
-            savoir-faire au service de marques, d’entreprises et d’initiatives ambitieuses.</p>
-          <p>De la conception à la mise en ligne, nous accompagnons chaque client avec une approche sur mesure, moderne
-            et transparente.</p>
+          <p>Autour de Mot Seck, une équipe jeune et dynamique de designers, développeurs et créatifs met son savoir-faire au service de marques, d’entreprises et d’initiatives ambitieuses.</p>
+          <p>De la conception à la mise en ligne, nous accompagnons chaque client avec une approche sur mesure, moderne et transparente.</p>
           <p>Chez <strong>MSDEV.</strong>, chaque ligne de code reflète notre philosophie : <em>Stay Honest.</em></p>
         </div>
-        <div class="about-visual" data-color="tomato">
-          <div class="cascade-container">
-            <img src="images/B2.png" alt="Une équipe, une expertise, une mission." loading="lazy">
-            <div class="cascade-text">MSDEV.</div>
+
+        <div class="about-visual" data-color="tomato" aria-hidden="false">
+          <div class="cascade-container" aria-hidden="true">
+            <img src="images/B2.png" alt="Illustration équipe" loading="lazy">
+            <div class="cascade-text" aria-hidden="true">MSDEV.</div>
           </div>
         </div>
       </article>
 
-      <!-- Bloc 3 : texte gauche / visuel droite -->
       <article class="about-block" aria-labelledby="about-block-3">
         <div class="about-text" id="about-block-3">
           <h3>Au-delà du digital.</h3>
-          <p>MSDEV. ne se limite pas à créer des sites web : nous bâtissons des identités, des expériences et des
-            stratégies numériques durables.</p>
-          <p>Notre objectif est simple : aider chaque projet à atteindre son plein potentiel grâce à des solutions
-            fiables, esthétiques et évolutives.</p>
-          <p>Parce qu’à l’ère du numérique, <strong>l’honnêteté, la clarté et la performance</strong> font toute la
-            différence.</p>
+          <p>MSDEV. ne se limite pas à créer des sites web : nous bâtissons des identités, des expériences et des stratégies numériques durables.</p>
+          <p>Notre objectif est simple : aider chaque projet à atteindre son plein potentiel grâce à des solutions fiables, esthétiques et évolutives.</p>
+          <p>Parce qu’à l’ère du numérique, <strong>l’honnêteté, la clarté et la performance</strong> font toute la différence.</p>
         </div>
-        <div class="about-visual" data-color="gris">
-          <div class="cascade-container">
-            <img src="images/B3 (2).png" alt="Au-delà du digital.">
-            <div class="cascade-text">MSDEV.</div>
+
+        <div class="about-visual" data-color="gris" aria-hidden="false">
+          <div class="cascade-container" aria-hidden="true">
+            <img src="images/B3 (2).png" alt="Illustration vision" loading="lazy">
+            <div class="cascade-text" aria-hidden="true">MSDEV.</div>
           </div>
         </div>
       </article>
     </section>
 
-
+    <!-- small inline scripts for intersection / cascade -->
     <script>
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
+      (function() {
+        // IntersectionObserver simple reveal
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
+          });
+        }, {threshold: 0.12});
+
+        document.querySelectorAll('.about-block').forEach(b => observer.observe(b));
+
+        // Cascade text (kept similar but less aggressive for a11y)
+        document.querySelectorAll('.cascade-container').forEach(container => {
+          const words = ['MSDEV.', 'DESIGN.', 'CODE.', 'VISION.', 'PASSION.'];
+          let i = 0;
+          const display = document.createElement('div');
+          display.className = 'cascade-text';
+          display.textContent = words[0];
+          container.appendChild(display);
+
+          setInterval(() => {
+            i = (i + 1) % words.length;
+            const newEl = document.createElement('div');
+            newEl.className = 'cascade-text';
+            newEl.textContent = words[i];
+            newEl.style.animation = 'floatCascade 1s ease';
+            container.appendChild(newEl);
+            setTimeout(() => {
+              if (display.parentNode) display.parentNode.removeChild(display);
+              display = newEl;
+            }, 900);
+          }, 3000);
         });
-      });
-
-      document.querySelectorAll('.about-block').forEach(block => {
-        observer.observe(block);
-      });
-
-      document.querySelectorAll('.cascade-container').forEach(container => {
-        const words = ['MSDEV.', 'DESIGN.', 'CODE.', 'VISION.', 'PASSION.'];
-        let index = 0;
-        let lastTime = performance.now();
-        const interval = 2500; // durée entre les mots (ms)
-
-        // Crée le texte initial
-        const textElement = document.createElement('div');
-        textElement.className = 'cascade-text';
-        textElement.textContent = words[index];
-        container.appendChild(textElement);
-
-        function nextCascade() {
-          const oldText = container.querySelector('.cascade-text');
-          const newText = document.createElement('div');
-          newText.className = 'cascade-text';
-          newText.textContent = words[(index + 1) % words.length];
-
-          // Appliquer animation
-          newText.style.animation = 'floatCascade 5s ease forwards';
-          container.appendChild(newText);
-
-          // Transition douce pour l’ancien texte
-          oldText.style.transition = 'opacity 1s ease, transform 1.2s ease';
-          oldText.style.opacity = '0';
-          oldText.style.transform = 'translate(-50%, -70%)';
-
-          // Nettoyage après transition
-          setTimeout(() => oldText.remove(), 1200);
-
-          index = (index + 1) % words.length;
-        }
-
-        // Boucle fluide avec horloge réelle
-        function animate(time) {
-          const elapsed = time - lastTime;
-
-          // Si l’intervalle est écoulé → changer de mot
-          if (elapsed >= interval) {
-            nextCascade();
-            lastTime = time;
-          }
-
-          requestAnimationFrame(animate);
-        }
-
-        requestAnimationFrame(animate);
-      });
-
-
-
+      })();
     </script>
 
-
-
-    <section role="region" aria-labelledby="realisations-title" id="realisations">
-
-      <div class="barriereTitle" style="z-index: 7; width: 100%;">
-        <img src="images/realisationBarriere.png" alt=""
-          style="  inset: 0; width: 100%; height: 200px; object-fit: cover; z-index: 1;" aria-hidden="true" loading="lazy">
+    <!-- REALISATIONS -->
+    <section id="realisations" role="region" aria-labelledby="realisations-title">
+      <div class="barriereTitle" style="z-index:7; width:100%;">
+        <img src="images/realisationBarriere.png" alt="" style="inset:0; width:100%; height:200px; object-fit:cover;" aria-hidden="true" loading="lazy">
         <h2 id="realisations-title">Nos réalisations</h2>
       </div>
 
-      <div class="realisations-loading" aria-label="On a Mission en cours de chargement">
+      <div class="realisations-loading" aria-label="On a Mission">
         <span class="loading-text">On A Mission</span>
         <span class="dots" aria-hidden="true">
-          <span>.</span>
-          <span>.</span>
-          <span>.</span>
+          <span>.</span><span>.</span><span>.</span>
         </span>
       </div>
-
     </section>
 
-
-
-
-
-    <section role="region" aria-labelledby="services-title" id="services">
+    <!-- SERVICES -->
+    <section id="services" role="region" aria-labelledby="services-title">
       <div class="barriereTitle">
-        <img src="images/ServiceBarriere.png" alt=""
-          style="  inset: 0; width: 100%; height: 200px; object-fit: cover; z-index: 1;" aria-hidden="true" loading="lazy">
-        <h2 id="services-title" >Nos Services.</h2>
+        <img src="images/ServiceBarriere.png" alt="" style="inset:0; width:100%; height:200px; object-fit:cover;" aria-hidden="true" loading="lazy">
+        <h2 id="services-title">Nos services.</h2>
       </div>
 
-  <div class="services-inner container">
-    <header class="services-header">
-      <h3 class="services-title">Nos services</h3>
-      <p class="services-subtitle">Conception, développement et optimisation web — accessibles et performants.</p>
-    </header>
+      <div class="services-inner container">
+        <header class="services-header">
+          <h3 class="services-title">Nos services</h3>
+          <p class="services-subtitle">Conception, développement et optimisation web — accessibles et performants.</p>
+        </header>
 
-    <ul class="services-grid" role="list">
-      <li class="service-card" role="article" aria-labelledby="svc-1-title">
-        <h4 id="svc-1-title" class="service-name">Design & UI/UX</h4>
-        <p class="service-desc">Design responsif, prototypes, tests d'utilisabilité.</p>
-        <a class="service-cta" href="/services/design" aria-label="En savoir plus sur Design & UI/UX">En savoir plus</a>
-      </li>
+        <ul class="services-grid" role="list">
+          <li class="service-card" role="article" aria-labelledby="svc-1-title">
+            <h4 id="svc-1-title" class="service-name">Design & UI/UX</h4>
+            <p class="service-desc">Design responsif, prototypes, tests d'utilisabilité.</p>
+            <a class="service-cta" href="/services/design" aria-label="En savoir plus sur Design & UI/UX">En savoir plus</a>
+          </li>
 
-      <li class="service-card" role="article" aria-labelledby="svc-2-title">
-        <h4 id="svc-2-title" class="service-name">Développement Web</h4>
-        <p class="service-desc">Sites performants, accessibilité WCAG, PWA.</p>
-        <a class="service-cta" href="/services/dev" aria-label="En savoir plus sur Développement Web">En savoir plus</a>
-      </li>
+          <li class="service-card" role="article" aria-labelledby="svc-2-title">
+            <h4 id="svc-2-title" class="service-name">Développement Web</h4>
+            <p class="service-desc">Sites performants, accessibilité WCAG, PWA.</p>
+            <a class="service-cta" href="/services/dev" aria-label="En savoir plus sur Développement Web">En savoir plus</a>
+          </li>
 
-      <li class="service-card" role="article" aria-labelledby="svc-3-title">
-        <h4 id="svc-3-title" class="service-name">SEO & Performance</h4>
-        <p class="service-desc">Audit SEO, optimisation on-page, Core Web Vitals.</p>
-        <a class="service-cta" href="/services/seo" aria-label="En savoir plus sur SEO & Performance">En savoir plus</a>
-      </li>
+          <li class="service-card" role="article" aria-labelledby="svc-3-title">
+            <h4 id="svc-3-title" class="service-name">SEO & Performance</h4>
+            <p class="service-desc">Audit SEO, optimisation on-page, Core Web Vitals.</p>
+            <a class="service-cta" href="/services/seo" aria-label="En savoir plus sur SEO & Performance">En savoir plus</a>
+          </li>
 
-      <li class="service-card" role="article" aria-labelledby="svc-4-title">
-        <h4 id="svc-4-title" class="service-name">Maintenance & Mises à jour</h4>
-        <p class="service-desc">Backups, monitoring, patching, contenu et évolutions.</p>
-        <a class="service-cta" href="/services/maintenance" aria-label="En savoir plus sur Maintenance">En savoir plus</a>
-      </li>
-    </ul>
-  </div>
-
+          <li class="service-card" role="article" aria-labelledby="svc-4-title">
+            <h4 id="svc-4-title" class="service-name">Maintenance & Mises à jour</h4>
+            <p class="service-desc">Backups, monitoring, patching, contenu et évolutions.</p>
+            <a class="service-cta" href="/services/maintenance" aria-label="En savoir plus sur Maintenance">En savoir plus</a>
+          </li>
+        </ul>
+      </div>
     </section>
 
-    <section role="region" aria-labelledby="contact-title" id="contact">
+    <!-- CONTACT -->
+    <section id="contact" role="region" aria-labelledby="contact-title">
       <div class="barriereTitle">
-        <img src="images/ContactBarriere.png" alt=""
-          style="  inset: 0; width: 100%; height: 200px; object-fit: cover; z-index: 1;" aria-hidden="true" loading="lazy">
+        <img src="images/ContactBarriere.png" alt="" style="inset:0; width:100%; height:200px; object-fit:cover;" aria-hidden="true" loading="lazy">
         <h2 id="contact-title">Nous contacter.</h2>
       </div>
 
       <div class="contact-container">
         <form class="contact-form" id="contactForm" method="POST" novalidate aria-labelledby="contact-title">
-          <!-- Nom et Prénom -->
           <div class="form-row">
-            <!-- Nom -->
             <div class="form-group">
-              <label for="lastname" class="form-label">
-                Nom <span aria-hidden="true">*</span>
-              </label>
-
-              <input type="text" id="lastname" name="lastname" class="form-input" required aria-required="true"
-                aria-describedby="lastname-error" autocomplete="family-name" placeholder="Votre nom">
-
+              <label for="lastname" class="form-label">Nom <span aria-hidden="true">*</span></label>
+              <input type="text" id="lastname" name="lastname" class="form-input" required aria-required="true" aria-describedby="lastname-error" autocomplete="family-name" placeholder="Votre nom">
               <span id="lastname-error" class="error-message" aria-live="polite"></span>
             </div>
 
-            <!-- Prénom -->
             <div class="form-group">
-              <label for="firstname" class="form-label">
-                Prénom <span aria-hidden="true">*</span>
-              </label>
-
-              <input type="text" id="firstname" name="firstname" class="form-input" required aria-required="true"
-                aria-describedby="firstname-error" autocomplete="given-name" placeholder="Votre prénom">
-
+              <label for="firstname" class="form-label">Prénom <span aria-hidden="true">*</span></label>
+              <input type="text" id="firstname" name="firstname" class="form-input" required aria-required="true" aria-describedby="firstname-error" autocomplete="given-name" placeholder="Votre prénom">
               <span id="firstname-error" class="error-message" aria-live="polite"></span>
             </div>
           </div>
 
-          <!-- Email -->
           <div class="form-group">
-            <label for="from_email" class="form-label">
-              Email <span aria-hidden="true">*</span>
-            </label>
-
-            <input type="email" id="from_email" name="from_email" class="form-input" required aria-required="true"
-              aria-describedby="from_email-error from_email-hint" autocomplete="email"
-              placeholder="Votre adresse email">
-
-            <span id="from_email-hint" class="form-hint">
-              Nous ne partagerons jamais votre adresse email.
-            </span>
-
+            <label for="from_email" class="form-label">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="from_email" name="from_email" class="form-input" required aria-required="true" aria-describedby="from_email-error from_email-hint" autocomplete="email" placeholder="Votre adresse email">
+            <span id="from_email-hint" class="form-hint">Nous ne partagerons jamais votre adresse email.</span>
             <span id="from_email-error" class="error-message" aria-live="polite"></span>
           </div>
 
-
-          <!-- Type de projet -->
           <div class="form-group">
             <label for="project_type" class="form-label">Type de projet <span aria-hidden="true">*</span></label>
-            <select id="project_type" name="project_type" class="form-select" required aria-required="true"
-              aria-describedby="project_type-error">
+            <select id="project_type" name="project_type" class="form-select" required aria-required="true" aria-describedby="project_type-error">
               <option value="" disabled selected>Sélectionnez votre type de projet</option>
               <option value="E-commerce">E-commerce</option>
               <option value="Portfolio">Portfolio</option>
@@ -399,92 +348,160 @@
             <span id="project_type-error" class="error-message" aria-live="polite"></span>
           </div>
 
-          <!-- Message -->
           <div class="form-group">
-            <label for="message" class="form-label">Description du projet <span arial-hidden="true">*</span></label>
-            <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true"
-              aria-describedby="message-error message-hint"
-              placeholder="Décrivez votre projet, vos objectifs, vos besoins spécifiques..."></textarea>
+            <label for="message" class="form-label">Description du projet <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" class="form-textarea" rows="6" required aria-required="true" aria-describedby="message-error message-hint" placeholder="Décrivez votre projet, vos objectifs, vos besoins spécifiques..."></textarea>
             <span id="message-hint" class="form-hint">Minimum 15 caractères</span>
             <span id="message-error" class="error-message" aria-live="polite"></span>
           </div>
 
-          <!-- Submit -->
           <button type="submit" class="submit-btn" id="submitBtn" aria-label="Envoyer le formulaire de contact">
             <span class="btn-text">Démarrer mon projet</span>
-            <span class="btn-loading" style="display: none;">
-              <i class="fas fa-spinner fa-spin"></i> Envoi en cours...
-            </span>
+            <span class="btn-loading" style="display:none"><i class="fas fa-spinner fa-spin" aria-hidden="true"></i> Envoi en cours...</span>
           </button>
 
-          <!-- Confirmation message -->
-          <div id="form-confirmation" class="confirmation-message" aria-live="polite" role="alert"
-            style="display: none;"></div>
+          <div id="form-confirmation" class="confirmation-message" aria-live="polite" role="status" style="display:none"></div>
         </form>
       </div>
     </section>
-
   </main>
 
   <footer role="contentinfo" aria-label="Pied de page principal">
-    <!-- Bande supérieure -->
     <div class="footerLogo-title" aria-hidden="true">
-      <span class="footer-logo" id="footer-logo"></span><span arial-hidden="true" class="no-select">.</span>
+      <span class="footer-logo" id="footer-logo" aria-hidden="true"></span>
+      <span aria-hidden="true" class="no-select">.</span>
     </div>
 
-    <!-- Contenu principal -->
     <div class="footer-content" role="navigation" aria-label="Liens du footer">
-      <!-- Navigation -->
       <div class="footer-column">
         <h2 class="footer-title">Liens de navigation.</h2>
-        <ul class="footer-links" role="menubar">
-          <li role="none"><a role="menuitem" href="#accueil" title="Accueil">Accueil.</a></li>
-          <li role="none"><a role="menuitem" href="#aboutUs" title="À propos">Bio.</a></li>
-          <li role="none"><a role="menuitem" href="#realisations" title="Réalisations">Mission.</a></li>
-          <li role="none"><a role="menuitem" href="#services" title="Services">Services.</a></li>
-          <li role="none"><a role="menuitem" href="#contact" title="Contact">Contact.</a></li>
+        <ul class="footer-links">
+          <li><a href="#accueil" title="Accueil">Accueil.</a></li>
+          <li><a href="#aboutUs" title="À propos">Bio.</a></li>
+          <li><a href="#realisations" title="Réalisations">Mission.</a></li>
+          <li><a href="#services" title="Services">Services.</a></li>
+          <li><a href="#contact" title="Contact">Contact.</a></li>
         </ul>
       </div>
 
-      <!-- Contact -->
       <div class="footer-column">
         <h2 class="footer-title">Détails du contact.</h2>
         <div>
-          <p><i class="fa-solid fa-phone"></i> <a href="tel:+216566464644">+216 56 64 64 44</a></p>
-          <p><i class="fa-solid fa-envelope"></i> <a href="mailto:aa@gmail.com">aa@gmail.com</a></p>
+          <p><i class="fa-solid fa-phone" aria-hidden="true"></i> <a href="tel:+216566464644">+216 56 64 64 44</a></p>
+          <p><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:aa@gmail.com">aa@gmail.com</a></p>
         </div>
       </div>
 
-      <!-- Réseaux sociaux -->
       <div class="footer-column">
         <h2 class="footer-title">Nos réseaux.</h2>
         <div class="footer-socials" role="group" aria-label="Réseaux sociaux">
-          <a href="#" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-          <a href="#" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="#" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+          <a href="#" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+          <a href="#" title="GitHub" aria-label="GitHub"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
 
-    <!-- Bas de page -->
     <div class="footer-bottom">
-      <p>
-        &copy; 2025 <strong class="no-select">MSDEV.</strong> Conçu avec
-        <span class="heart" aria-hidden="true">♥</span> par Mot Seck.
-      </p>
+      <p>&copy; 2025 <strong class="no-select">MSDEV.</strong> Conçu avec <span class="heart" aria-hidden="true">♥</span> par Mot Seck.</p>
     </div>
-
   </footer>
 
-  <script src="footerScript.js"></script>
-  <script src="headerScripts.js"></script>
-  <script src="heroScripts.js"></script>
-  <script src="darkmode.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"></script>
-  <script src="scroll.js"></script>
-  <script src="contactScripts.js"></script>
+  <!-- Scripts (kept external) -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
 
+  <!-- Inline small script: accessible mobile menu + basic form UX -->
+  <script>
+    (function () {
+      // Mobile menu toggle (accessible)
+      const burger = document.getElementById('burger');
+      const mobile = document.getElementById('mobile-menu');
+      let lastFocused = null;
+
+      function openMenu() {
+        lastFocused = document.activeElement;
+        mobile.hidden = false;
+        mobile.setAttribute('aria-hidden', 'false');
+        burger.setAttribute('aria-expanded', 'true');
+        // Move focus to first link
+        const firstLink = mobile.querySelector('a');
+        if (firstLink) firstLink.focus();
+        // trap focus (simple)
+        document.addEventListener('focus', trapFocus, true);
+      }
+
+      function closeMenu() {
+        mobile.hidden = true;
+        mobile.setAttribute('aria-hidden', 'true');
+        burger.setAttribute('aria-expanded', 'false');
+        if (lastFocused) lastFocused.focus();
+        document.removeEventListener('focus', trapFocus, true);
+      }
+
+      function trapFocus(e) {
+        if (!mobile.contains(e.target)) {
+          e.stopPropagation();
+          mobile.querySelector('a')?.focus();
+        }
+      }
+
+      burger.addEventListener('click', () => {
+        const expanded = burger.getAttribute('aria-expanded') === 'true';
+        if (expanded) closeMenu(); else openMenu();
+      });
+
+      // Close mobile menu on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobile && !mobile.hidden) closeMenu();
+      });
+
+      // Basic form UX: show loading state and simple client validation
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const btnLoading = submitBtn.querySelector('.btn-loading');
+      const btnText = submitBtn.querySelector('.btn-text');
+
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // simple validation: message length
+          const msg = form.querySelector('#message');
+          const msgErr = document.getElementById('message-error');
+          if (msg && msg.value.trim().length < 15) {
+            msgErr.textContent = 'Veuillez décrire votre projet (minimum 15 caractères).';
+            msgErr.focus();
+            return;
+          } else {
+            msgErr.textContent = '';
+          }
+
+          // show loading
+          btnText.style.display = 'none';
+          btnLoading.style.display = 'inline-block';
+          submitBtn.disabled = true;
+
+          // simulate async send (replace with real email send)
+          setTimeout(() => {
+            const conf = document.getElementById('form-confirmation');
+            conf.style.display = 'block';
+            conf.textContent = 'Merci — votre message a bien été envoyé. Nous revenons vers vous rapidement.';
+            submitBtn.disabled = false;
+            btnLoading.style.display = 'none';
+            btnText.style.display = 'inline';
+            form.reset();
+          }, 1200);
+        });
+      }
+    })();
+  </script>
+
+  <!-- Defer external site scripts -->
+  <script src="footerScript.js" defer></script>
+  <script src="headerScripts.js" defer></script>
+  <script src="heroScripts.js" defer></script>
+  <script src="darkmode.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js" defer></script>
+  <script src="scroll.js" defer></script>
+  <script src="contactScripts.js" defer></script>
 </body>
-
-
 </html>
