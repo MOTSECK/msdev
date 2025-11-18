@@ -270,6 +270,12 @@ section h2[id$="-title"]::after {
   }
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .cascade-text, img, * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
 
 /* =============================== 
    🎨 SECTION RÉALISATIONS
