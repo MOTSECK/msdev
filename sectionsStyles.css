@@ -356,6 +356,116 @@ section h2[id$="-title"]::after {
   margin-top: -5vh;
   padding:0;
 }
+/* Utility: visually hidden for accessibility */
+.sr-only {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+  padding: 0; margin: -1px;
+}
+
+/* Section base */
+#services {
+  background-color: #ffffff; /* blanc sécurisé (contraste 21:1 vs #000) */
+  z-index: 4;
+  margin-top: -5vh;
+  padding: 6rem 1.5rem;
+  color: #0d0d0d;
+}
+
+/* Container */
+.services-inner.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header */
+.services-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.services-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  margin: 0 0 0.5rem;
+  font-weight: 800;
+}
+.services-subtitle {
+  margin: 0;
+  font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+  color: rgba(13,13,13,0.76);
+}
+
+/* Grid */
+.services-grid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Card */
+.service-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fbfbfb 100%);
+  border: 1px solid rgba(13,13,13,0.06);
+  border-radius: 14px;
+  padding: 1.25rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform .28s cubic-bezier(.2,.9,.3,1), box-shadow .28s ease;
+  box-shadow: 0 6px 18px rgba(13,13,13,0.04);
+}
+
+/* Keyboard focus & hover */
+.service-card:focus-within,
+.service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 36px rgba(13,13,13,0.08);
+  outline: none;
+}
+
+/* Titles and text */
+.service-name {
+  font-size: 1.05rem;
+  margin: 0 0 .5rem;
+  color: #0d0d0d;
+}
+.service-desc {
+  margin: 0 0 1.25rem;
+  color: rgba(13,13,13,0.7);
+  line-height: 1.4;
+}
+
+/* CTA */
+.service-cta {
+  display: inline-block;
+  padding: .6rem .85rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  background: #0d0d0d; /* fond noir pour contraste */
+  color: #ffffff;       /* texte blanc => WCAG AAA vs white bg */
+  border: 2px solid transparent;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.service-cta:focus,
+.service-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(13,13,13,0.12);
+  outline: 3px solid rgba(13,13,13,0.12);
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  #services { padding: 4rem 1rem; }
+  .service-card { padding: 1rem; min-height: auto; }
+}
 
 
 /* =============================== 
